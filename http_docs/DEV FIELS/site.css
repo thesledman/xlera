@@ -1,8 +1,6 @@
 /* Font setting overwrites */
-body,
-p {
-  font-family: "Poppins", sans-serif !important;
-  color: #003147;
+body {
+  font-family: "Poppins", sans-serif!;
 }
 
 h1,
@@ -50,7 +48,8 @@ h6 {
   color: #f2a053;
 }
 
-/* Spacing (Margins/Padding) */
+/* Spacing (Padding/Margins) */
+
 .px-6 {
   padding-right: 4rem !important;
   padding-left: 4rem !important;
