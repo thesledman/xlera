@@ -5,7 +5,7 @@ var path = require('path');
 router.get('/', function(req, res, next) {
   //res.render('index', { title: 'Express' });
 	//res.sendFile(path.join('../views/index.html'));
-	res.sendFile('index.html', { root: '/Users/edwardcoddington/Sites/xlerasolutions/views/'});
+	res.sendFile('index.html', { root: './views/'});
 });
 
 module.exports = router;
