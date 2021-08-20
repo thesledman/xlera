@@ -1,0 +1,109 @@
+.display-font-1 {
+  font-family: "Roboto", sans-serif;
+}
+
+.display-font-2 {
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+.text-primary {
+  color: #003147 !important;
+}
+
+.text-primary-light {
+  color: #dae0e3;
+}
+
+.text-secondary {
+  color: #719a4e !important;
+}
+
+.text-secondary-lighter {
+  color: #b5c435;
+}
+.text-accent {
+  color: #f2a053;
+}
+
+a,
+.nav-link {
+  color: #003147;
+}
+
+a:hover,
+.nav-link:hover {
+  color: #216481;
+}
+
+.bg-primary {
+  background-color: #003147 !important;
+}
+
+.border-primary {
+  border-color: #003147 !important;
+}
+
+.light-primary-bg {
+  background-color: #dae0e3;
+}
+
+.light-secondary-bg {
+  background-color: #eaf0e5;
+}
+
+.btn-outline-primary {
+  color: #103145;
+  background-color: FFFFFF;
+  border-color: #103145;
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #103145;
+  border-color: #103145;
+}
+
+.btn-accent {
+  color: #fff;
+  background-color: #ff9c3f;
+  border-color: #ff9c3f;
+}
+
+.btn-accent:hover {
+  color: #fff;
+  background-color: #ffb26a;
+  border-color: #ffb26a;
+}
+.homepage-hero {
+  background-image: linear-gradient(
+      to right,
+      transparent,
+      50%,
+      #719a4e 70%,
+      #719a4e 100%
+    ),
+    url("../images/homepage-hero.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 530px;
+  position: relative;
+}
+
+.homepage-hero-text {
+  width: 40%;
+  margin-left: auto;
+  color: #ffffff;
+}
