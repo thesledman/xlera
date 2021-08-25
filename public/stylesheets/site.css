@@ -1,8 +1,8 @@
-/* Font setting overwrites */
+/* Font/Text setting overwrites/Additions */
 body,
 p {
   font-family: "Poppins", sans-serif !important;
-  color: #003147;
+  color: #003146;
 }
 
 h1,
@@ -30,17 +30,22 @@ h6 {
   font-weight: 600 !important;
 }
 
+@media (min-width: 992px) {
+  .fs-lg-5 {
+    font-size: 1.25rem !important;
+  }
+}
 /* Colors */
 .text-primary {
-  color: #003147 !important;
+  color: #003146 !important;
 }
 
 .text-primary-light {
-  color: #dae0e3;
+  color: #6f8b97;
 }
 
 .text-secondary {
-  color: #719a4e !important;
+  color: #669b41 !important;
 }
 
 .text-secondary-lighter {
@@ -50,7 +55,17 @@ h6 {
   color: #f2a053;
 }
 
+.text-secondary-accent {
+  color: #b5c435;
+}
+
 /* Spacing (Margins/Padding) */
+.p-6 {
+  padding: 5rem !important;
+}
+.pt-6 {
+  padding-top: 5rem !important;
+}
 .px-6 {
   padding-right: 4rem !important;
   padding-left: 4rem !important;
@@ -63,20 +78,149 @@ h6 {
 .w-33 {
   width: 33% !important;
 }
+.m-10 {
+  margin: 6rem !important;
+}
+.my-10 {
+  margin-top: 6rem !important;
+  margin-bottom: 6rem !important;
+}
+
+/* SM Screen */
+@media (min-width: 576px) {
+  .m-sm-10 {
+    margin: 6rem !important;
+  }
+  .my-sm-10 {
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
+  }
+  .py-md-10 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+  .lh-sm-1 {
+    line-height: 1 !important;
+  }
+  .lh-sm-sm {
+    line-height: 1.25 !important;
+  }
+  .lh-sm-base {
+    line-height: 1.5 !important;
+  }
+  .lh-sm-lg {
+    line-height: 2 !important;
+  }
+}
+/* MD Screen */
+@media (min-width: 768px) {
+  .m-md-10 {
+    margin: 6rem !important;
+  }
+  .my-md-10 {
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
+  }
+  .py-md-10 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+  .lh-md-1 {
+    line-height: 1 !important;
+  }
+
+  .lh-md-sm {
+    line-height: 1.25 !important;
+  }
+
+  .lh-md-base {
+    line-height: 1.5 !important;
+  }
+
+  .lh-md-lg {
+    line-height: 2 !important;
+  }
+}
+/* LG Screen */
+@media (min-width: 992px) {
+  .m-lg-10 {
+    margin: 6rem !important;
+  }
+  .my-lg-10 {
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
+  }
+  .py-lg-10 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+  .lh-lg-1 {
+    line-height: 1 !important;
+  }
+
+  .lh-lg-sm {
+    line-height: 1.25 !important;
+  }
+
+  .lh-lg-base {
+    line-height: 1.5 !important;
+  }
+
+  .lh-lg-lg {
+    line-height: 2 !important;
+  }
+}
 /* Links */
+.link-primary {
+  color: #003146;
+  transition: all 0.3s ease-in;
+}
+.link-primary:hover {
+  color: #6f8b97;
+}
+.link-primary:active {
+  color: #6f8b97;
+}
+
+.link-primary-light {
+  color: #6f8b97;
+  transition: all 0.3s ease-in;
+}
+.link-primary-light:hover {
+  color: #ffffff;
+}
+.link-primary-light:active {
+  color: #ffffff;
+}
+
+.link-secondary {
+  color: #669b41;
+}
+.link-secondary:hover {
+  color: #b5c435;
+}
+.link-secondary:active {
+  color: #b5c435;
+}
+
 a,
 .nav-link {
-  color: #003147;
+  color: #003146;
 }
 
 a:hover,
 .nav-link:hover {
-  color: #216481;
+  /* color: #216481; */
+  color: #6f8b97;
 }
 
 /* Borders */
 .border-primary {
-  border-color: #003147 !important;
+  border-color: #003146 !important;
+}
+
+.border-secondary {
+  border-color: #669b41 !important;
 }
 
 .rounded-4 {
@@ -86,15 +230,16 @@ a:hover,
 
 /* Background */
 .bg-primary {
-  background-color: #003147 !important;
+  background-color: #003146 !important;
 }
 
-.light-primary-bg {
-  background-color: #dae0e3;
+.bg-primary-light {
+  background-color: #c1cbd0;
+  /* background-color: #dae0e3; */
 }
 
-.light-secondary-bg {
-  background-color: #eaf0e5;
+.bg-secondary-light {
+  background-color: #f3fcec;
 }
 
 /* Buttons */
@@ -102,21 +247,34 @@ a:hover,
   color: #103145;
   background-color: FFFFFF;
   border-color: #103145;
+  transition: all 0.2s ease-in;
 }
 .btn-outline-primary:hover {
-  color: #fff;
+  color: #ffffff;
   background-color: #103145;
   border-color: #103145;
 }
 
+.btn-primary {
+  color: #ffffff !important;
+  background-color: #003146;
+  border-color: #003146;
+}
+
+.btn-primary:hover {
+  color: #ffffff;
+  background-color: #001822;
+  border-color: #001822;
+}
+
 .btn-accent {
-  color: #fff;
+  color: #ffffff;
   background-color: #ff9c3f;
   border-color: #ff9c3f;
 }
 
 .btn-accent:hover {
-  color: #fff;
+  color: #ffffff;
   background-color: #ffb26a;
   border-color: #ffb26a;
 }
@@ -128,9 +286,9 @@ a:hover,
   background-image: linear-gradient(
       to right,
       transparent,
-      50%,
-      #719a4e 70%,
-      #719a4e 100%
+      30%,
+      #669b41 45%,
+      #669b41 100%
     ),
     url("../images/homepage-hero.png");
   background-position: center center;
@@ -143,9 +301,41 @@ a:hover,
   .homepage-hero {
     background-image: linear-gradient(
         to bottom,
-        rgba(113, 154, 78, 0.9),
-        rgba(113, 154, 78, 0.9)
+        rgba(102, 155, 65, 0.9),
+        rgba(102, 155, 65, 0.9)
       ),
       url("../images/homepage-hero.png");
+  }
+}
+
+.victory-hero {
+  background-image: linear-gradient(
+      to right,
+      transparent,
+      42%,
+      #003146 59%,
+      #003146 100%
+    ),
+    url("../images/victory-hero.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 675px;
+  position: relative;
+  line-height: 2;
+}
+@media (max-width: 767.98px) {
+  .victory-hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 49, 70, 0.9),
+        rgba(0, 49, 70, 0.9)
+      ),
+      url("../images/victory-hero.png");
+  }
+}
+@media (max-width: 991.98px) {
+  .victory-hero {
+    line-height: 1.25;
   }
 }
