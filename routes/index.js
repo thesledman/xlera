@@ -8,4 +8,9 @@ router.get('/', function(req, res, next) {
 	res.sendFile('index.html', { root: './views/'});
 });
 
+router.get('/about', function(req, res, next) {
+  //res.render('index', { title: 'Express' });
+	//res.sendFile(path.join('../views/index.html'));
+	res.sendFile('about-us.html', { root: './views/'});
+});
 module.exports = router;

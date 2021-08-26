@@ -30,6 +30,15 @@ h6 {
   font-weight: 600 !important;
 }
 
+.fw-boldest {
+  font-weight: 700 !important;
+}
+.text-underline-below {
+  text-underline-position: under;
+}
+.fs-6 {
+  font-size: 1.15rem !important;
+}
 @media (min-width: 992px) {
   .fs-lg-5 {
     font-size: 1.25rem !important;
@@ -78,6 +87,9 @@ h6 {
 .w-33 {
   width: 33% !important;
 }
+.w-55 {
+  width: 55% !important;
+}
 .m-10 {
   margin: 6rem !important;
 }
@@ -114,6 +126,12 @@ h6 {
 }
 /* MD Screen */
 @media (min-width: 768px) {
+  .w-md-50 {
+    width: 50% !important;
+  }
+  .w-md-65 {
+    width: 65% !important;
+  }
   .m-md-10 {
     margin: 6rem !important;
   }
@@ -143,6 +161,9 @@ h6 {
 }
 /* LG Screen */
 @media (min-width: 992px) {
+  .w-lg-50 {
+    width: 50% !important;
+  }
   .m-lg-10 {
     margin: 6rem !important;
   }
@@ -243,6 +264,12 @@ a:hover,
 }
 
 /* Buttons */
+.btn {
+  padding: 0.54rem 1.95rem !important;
+  border-width: 2px !important;
+  border-radius: 0.6rem !important;
+  font-weight: 500 !important;
+}
 .btn-outline-primary {
   color: #103145;
   background-color: FFFFFF;
@@ -263,8 +290,8 @@ a:hover,
 
 .btn-primary:hover {
   color: #ffffff;
-  background-color: #001822;
-  border-color: #001822;
+  background-color: #012636;
+  border-color: #012636;
 }
 
 .btn-accent {
@@ -286,15 +313,15 @@ a:hover,
   background-image: linear-gradient(
       to right,
       transparent,
-      30%,
+      37%,
       #669b41 45%,
       #669b41 100%
     ),
-    url("../images/homepage-hero.png");
+    url("../images/homepage-hero-v2.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 530px;
+  height: 525px;
   position: relative;
 }
 @media (max-width: 767.98px) {
@@ -304,23 +331,17 @@ a:hover,
         rgba(102, 155, 65, 0.9),
         rgba(102, 155, 65, 0.9)
       ),
-      url("../images/homepage-hero.png");
+      url("../images/homepage-hero-v2.png");
   }
 }
 
 .victory-hero {
-  background-image: linear-gradient(
-      to right,
-      transparent,
-      42%,
-      #003146 59%,
-      #003146 100%
-    ),
+  background-image: linear-gradient(to right, transparent, 42%, #003146 58%),
     url("../images/victory-hero.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 675px;
+  height: 665px;
   position: relative;
   line-height: 2;
 }
