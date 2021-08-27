@@ -1,4 +1,8 @@
 /* Font/Text setting overwrites/Additions */
+body {
+  min-height: 75rem;
+  padding-top: 98px;
+}
 body,
 p {
   font-family: "Poppins", sans-serif !important;
@@ -93,6 +97,12 @@ h6 {
 .m-10 {
   margin: 6rem !important;
 }
+.mt-10 {
+  margin-top: 6rem !important;
+}
+.mt-15 {
+  margin-top: 7rem !important;
+}
 .my-10 {
   margin-top: 6rem !important;
   margin-bottom: 6rem !important;
@@ -163,6 +173,9 @@ h6 {
 @media (min-width: 992px) {
   .w-lg-50 {
     width: 50% !important;
+  }
+  .w-lg-55 {
+    width: 55% !important;
   }
   .m-lg-10 {
     margin: 6rem !important;
