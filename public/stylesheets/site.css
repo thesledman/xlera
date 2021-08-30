@@ -8,6 +8,14 @@ p {
   font-family: "Poppins", sans-serif !important;
   color: #003146;
 }
+section::before {
+  display: block;
+  content: " ";
+  margin-top: -98px;
+  height: 98px;
+  visibility: hidden;
+  pointer-events: none;
+}
 
 h1,
 h2,
