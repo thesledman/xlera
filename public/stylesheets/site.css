@@ -8,14 +8,14 @@ p {
   font-family: "Poppins", sans-serif !important;
   color: #003146;
 }
-section::before {
+/* section::before {
   display: block;
   content: " ";
   margin-top: -98px;
   height: 98px;
   visibility: hidden;
   pointer-events: none;
-}
+} */
 
 h1,
 h2,
@@ -89,6 +89,9 @@ h6 {
 .p-6 {
   padding: 5rem !important;
 }
+.p-10 {
+  padding: 8rem !important;
+}
 .pt-6 {
   padding-top: 5rem !important;
 }
@@ -100,6 +103,16 @@ h6 {
 .px-7 {
   padding-right: 5rem !important;
   padding-left: 5rem !important;
+}
+
+.px-10 {
+  padding-right: 8rem !important;
+  padding-left: 8rem !important;
+}
+
+.py-10 {
+  padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
 }
 .w-33 {
   width: 33% !important;

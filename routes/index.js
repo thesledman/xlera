@@ -14,7 +14,7 @@ router.get('/about', function(req, res, next) {
 	res.sendFile('about-us.html', { root: './views/'});
 });
 
-router.get('/ateam', function(req, res, next) {
+router.get('/a-team', function(req, res, next) {
   //res.render('index', { title: 'Express' });
 	//res.sendFile(path.join('../views/index.html'));
 	res.sendFile('a-team.html', { root: './views/'});
