@@ -52,6 +52,9 @@ h6 {
 .fs-6 {
   font-size: 1.15rem !important;
 }
+.fs-7 {
+  font-size: 1rem !important;
+}
 @media (min-width: 992px) {
   .fs-lg-5 {
     font-size: 1.25rem !important;
