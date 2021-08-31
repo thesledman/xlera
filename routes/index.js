@@ -20,6 +20,12 @@ router.get('/a-team', function(req, res, next) {
 	res.sendFile('a-team.html', { root: './views/'});
 });
 
+router.get('/opportunity', function(req, res, next) {
+  //res.render('index', { title: 'Express' });
+	//res.sendFile(path.join('../views/index.html'));
+	res.sendFile('opportunity.html', { root: './views/'});
+});
+
 router.get('/privacy', function(req, res, next) {
   //res.render('index', { title: 'Express' });
 	//res.sendFile(path.join('../views/index.html'));
