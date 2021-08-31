@@ -99,7 +99,6 @@ h6 {
   padding-right: 4rem !important;
   padding-left: 4rem !important;
 }
-
 .px-7 {
   padding-right: 5rem !important;
   padding-left: 5rem !important;
@@ -112,6 +111,13 @@ h6 {
 
 .py-10 {
   padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
+}
+
+.pt-10 {
+  padding-top: 8rem !important;
+}
+.pb-10 {
   padding-bottom: 8rem !important;
 }
 .w-33 {
@@ -141,6 +147,10 @@ a,
   color: #003146;
   transition: all 0.3s ease-in;
   text-decoration: none;
+}
+
+a.decorated {
+  text-decoration: underline !important;
 }
 a:hover,
 a:active,
@@ -380,9 +390,9 @@ a.active,
 }
 /* Navagation Elements */
 
-.subnav {
-  height: 110px;
-}
+/* .subnav {
+  min-height: 110px;
+} */
 
 /* Responsive BreakPoint Additions */
 
@@ -474,6 +484,10 @@ a.active,
   .py-lg-10 {
     padding-top: 6rem !important;
     padding-bottom: 6rem !important;
+  }
+  .py-lg-4-5 {
+    padding-top: 2.25rem !important;
+    padding-bottom: 2.25rem !important;
   }
   .lh-lg-1 {
     line-height: 1 !important;

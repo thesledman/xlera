@@ -19,4 +19,10 @@ router.get('/a-team', function(req, res, next) {
 	//res.sendFile(path.join('../views/index.html'));
 	res.sendFile('a-team.html', { root: './views/'});
 });
+
+router.get('/privacy', function(req, res, next) {
+  //res.render('index', { title: 'Express' });
+	//res.sendFile(path.join('../views/index.html'));
+	res.sendFile('privacy.html', { root: './views/'});
+});
 module.exports = router;
