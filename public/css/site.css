@@ -262,6 +262,18 @@ a.active,
   border-color: #012636;
 }
 
+.btn-secondary {
+  color: #ffffff !important;
+  background-color: #669b41;
+  border-color: #669b41;
+}
+
+.btn-secondary:hover {
+  color: #ffffff;
+  background-color: #537e35;
+  border-color: #537e35;
+}
+
 .btn-accent {
   color: #ffffff;
   background-color: #ff9c3f;
@@ -285,7 +297,7 @@ a.active,
       #669b41 45%,
       #669b41 100%
     ),
-    url("../images/homepage-hero-v2.png");
+    url("/images/homepage-hero-v2.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -299,7 +311,7 @@ a.active,
         rgba(102, 155, 65, 0.9),
         rgba(102, 155, 65, 0.9)
       ),
-      url("../images/homepage-hero-v2.png");
+      url("/images/homepage-hero-v2.png");
   }
 }
 
@@ -309,7 +321,7 @@ a.active,
       rgba(0, 49, 70, 0.8),
       rgba(0, 49, 70, 0.8)
     ),
-    url("../images/about-us-hero.png");
+    url("/images/about-us-hero.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -323,7 +335,7 @@ a.active,
       rgba(0, 49, 70, 0.8),
       rgba(0, 49, 70, 0.8)
     ),
-    url("../images/ateam-hero.png");
+    url("/images/ateam-hero.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -334,7 +346,7 @@ a.active,
 /* Mid-Page Heros */
 .victory-hero {
   background-image: linear-gradient(to right, transparent, 42%, #003146 58%),
-    url("../images/victory-hero.png");
+    url("/images/victory-hero.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -349,7 +361,7 @@ a.active,
         rgba(0, 49, 70, 0.9),
         rgba(0, 49, 70, 0.9)
       ),
-      url("../images/victory-hero.png");
+      url("/images/victory-hero.png");
   }
 }
 @media (max-width: 991.98px) {
@@ -360,7 +372,7 @@ a.active,
 
 .engines-hero {
   background-image: linear-gradient(to right, transparent, 42%, #ffffff 58%),
-    url("../images/engine-hero.png");
+    url("/images/engine-hero.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -375,7 +387,7 @@ a.active,
         rgba(0, 49, 70, 0.9),
         rgba(0, 49, 70, 0.9)
       ),
-      url("../images/engine-hero.png");
+      url("/images/engine-hero.png");
   }
 }
 /* Lists */

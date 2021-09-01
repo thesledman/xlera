@@ -11,6 +11,14 @@ router.get('/about', function(req, res, next) {
 router.get('/a-team', function(req, res, next) {
   res.render('a-team', { title: 'Xlera Solutions - Join The A-Team' });
 });
+
+router.get('/opportunity/:opportunityId', function(req, res, next) {
+	var opportunity = {
+			name: req.params.opportunityId
+		}
+  res.render('opportunity', { 'title': 'Xlera Solutions - Opportunity','opportunity':opportunity});
+});
+
 router.get('/privacy', function(req, res, next) {
   res.render('privacy', { title: 'Xlera Solutions - Privacy Policy' });
 });
