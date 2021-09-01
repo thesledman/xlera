@@ -60,6 +60,7 @@ h6 {
     font-size: 1.25rem !important;
   }
 }
+
 /* Colors */
 .text-primary {
   color: #003146 !important;
@@ -84,6 +85,21 @@ h6 {
   color: #b5c435;
 }
 
+.text-shadow-sm {
+  text-shadow: 1px 1px 1px #111111 !important;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 5px #000000;
+}
+
+.text-shadow-none {
+  text-shadow: none !important;
+}
+
+.text-shadow-white-sm {
+  text-shadow: 1px 1px 1px #ffffff !important;
+}
 /* Spacing (Margins/Padding/Line-Height) */
 
 .lh-md {
