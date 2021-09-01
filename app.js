@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var expressLayouts = require('express-ejs-layouts');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -9,13 +10,18 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
-app.use('/css', express.static(path.join('./node_modules/bootstrap/dist/css')));
-app.use('/js', express.static(path.join('node_modules/bootstrap/dist/js')));
-app.use('/js', express.static(path.join('node_modules/vanilla-back-to-top/dist')));
-app.use(express.static(path.join(__dirname, 'html')));
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.use(expressLayouts);
+app.set('layout', './layouts/public')
+app.set('view engine', 'ejs');
+
+// Static Imports
+app.use('/css/bootstrap.min.css', express.static(path.join('node_modules/bootstrap/dist/css/bootstrap.min.css')));
+
+app.use('/js/bootstrap.bundle.min.js', express.static(path.join('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')));
+app.use('/js/vanilla-back-to-top.min.js', express.static(path.join('node_modules/vanilla-back-to-top/dist/vanilla-back-to-top.min.js')));
+
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -25,6 +31,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<!-- Sophia Pro , poppins-->
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1">
+	<meta name="description"
+		  content="">
+	<title>
+		<%= title
+			%>
+	</title>
+
+	<!-- Bootstrap core CSS -->
+	<link href="/css/bootstrap.min.css"
+		  rel="stylesheet">
+	<link rel="preconnect"
+		  href="https://fonts.googleapis.com">
+	<link rel="preconnect"
+		  href="https://fonts.gstatic.com"
+		  crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,600;1,700&display=swap"
+		  rel="stylesheet">
+	<link rel="stylesheet"
+		  href="./css/site.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-md py-3 fixed-top bg-white shadow-sm">
+		<div class="container-fluid">
+			<a class="navbar-brand"
+			   href="/">
+				<img src="./images/Xlera-Logo@2x.png"
+					 class="img-fluid ps-3"
+					 alt="logo"
+					 style="max-height:56px;">
+			</a>
+			<button class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarCollapse"
+					aria-controls="navbarCollapse"
+					aria-expanded="false"
+					aria-label="Toggle navigation">
+				<svg xmlns="http://www.w3.org/2000/svg"
+					 width="32"
+					 height="32"
+					 fill="currentColor"
+					 class="bi bi-list"
+					 viewBox="0 0 16 16">
+					<path fill-rule="evenodd"
+						  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+				</svg>
+			</button>
+			<div class="collapse navbar-collapse"
+				 id="navbarCollapse">
+				<ul class="navbar-nav ms-auto mb-2 mb-md-0">
+					<li class="nav-item px-md-3">
+						<a class="nav-link fs-5"
+						   aria-current="page"
+						   href="about">About</a>
+					</li>
+					<li class="nav-item px-md-3">
+						<a class="nav-link fs-5"
+						   href="a-team">Join A-Team</a>
+					</li>
+					<li class="nav-item ps-md-5">
+						<a href="#"
+						   class="btn btn-accent px-4">Book a Call</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<%- body
+		%>
+		<section class="footer bg-primary px-5 pt-5 pb-5">
+			<div class="">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 text-center">
+							<img src="images/Xlera-Logo-White@2x.png"
+								 style="max-height:88px;">
+							<br>
+							<p class="text-primary-light fs-5 fw-bold mt-4">Headquartered in the United
+								States.
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col border-top border-white border-2 w-100 mt-3 mb-4"
+							 style="height:3px;">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 col-md-6 text-primary-light text-start mt-1">
+							&copy; Xlera Solutions, LLC 2021, All Rights Reserved
+						</div>
+						<div class="col-12 col-md-6 text-end">
+							<a href="privacy"
+							   class="link-primary-light text-decoration-none">Privacy Policy</a> <a href="contact"
+							   class="link-primary-light text-decoration-none ms-4">Contact Us</a>
+						</div>
+					</div>
+				</div>
+		</section>
+		</main>
+</body>
+
+<script language="javascript"
+		src="/js/bootstrap.bundle.min.js"></script>
+<script language="javascript"
+		src="js/vanilla-back-to-top.min.js"></script>
+<script>addBackToTop({ scrollDuration: 200 });</script>
+<script language="javascript"
+		src="js/site.js"></script>
+
+</html>
