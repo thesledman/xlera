@@ -55,6 +55,9 @@ h6 {
 .fs-7 {
   font-size: 1rem !important;
 }
+.fs-9 {
+  font-size: 0.9rem !important;
+}
 @media (min-width: 992px) {
   .fs-lg-5 {
     font-size: 1.25rem !important;
@@ -302,6 +305,17 @@ a.active,
   border-color: #ee8524;
 }
 
+.btn-outline-white {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #ffffff;
+  transition: all 0.2s ease-in;
+}
+.btn-outline-white:hover {
+  color: #103145;
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
 /* MISC NON BOOTSTRAP OVERWRITES */
 
 /* Hero */
@@ -313,7 +327,7 @@ a.active,
       #669b41 45%,
       #669b41 100%
     ),
-    url("/images/homepage-hero-v2.png");
+    url("/images/homepage-hero-2.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -327,7 +341,7 @@ a.active,
         rgba(102, 155, 65, 0.9),
         rgba(102, 155, 65, 0.9)
       ),
-      url("/images/homepage-hero-v2.png");
+      url("/images/homepage-hero-2.png");
   }
 }
 
@@ -405,6 +419,20 @@ a.active,
       ),
       url("/images/engine-hero.png");
   }
+  .text-primary-to-white {
+    color: #ffffff !important;
+  }
+  .btn-outline-primary {
+    color: #ffffff !important;
+    background-color: transparent !important;
+    border-color: #ffffff !important;
+    transition: all 0.2s ease-in;
+  }
+  .btn-outline-primary:hover {
+    color: #103145 !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+  }
 }
 /* Lists */
 .believe-list > li {
@@ -418,6 +446,14 @@ a.active,
   content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='35' height='35' fill='rgb(102, 155, 65)' class='text-secondary bi bi-arrow-right-circle' viewBox='0 0 16 16'> <path fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z' /></svg>");
   height: auto;
   width: 35px;
+}
+
+#believe:before,
+#dontbelieve:before {
+  content: "";
+  display: block;
+  height: 115px; /* fixed header height*/
+  margin: -115px 0 0; /* negative fixed header height */
 }
 /* Navagation Elements */
 
