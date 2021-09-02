@@ -85,20 +85,20 @@ h6 {
   color: #b5c435;
 }
 
-.text-shadow-sm {
-  text-shadow: 1px 1px 1px #111111 !important;
+.text-shadow {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
 }
 
-.text-shadow {
-  text-shadow: 1px 1px 5px #000000;
+.text-shadow-sm {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8) !important;
+}
+
+.text-shadow-xs {
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4) !important;
 }
 
 .text-shadow-none {
   text-shadow: none !important;
-}
-
-.text-shadow-white-sm {
-  text-shadow: 1px 1px 1px #ffffff !important;
 }
 /* Spacing (Margins/Padding/Line-Height) */
 
@@ -298,8 +298,8 @@ a.active,
 
 .btn-accent:hover {
   color: #ffffff;
-  background-color: #ffb26a;
-  border-color: #ffb26a;
+  background-color: #ee8524;
+  border-color: #ee8524;
 }
 
 /* MISC NON BOOTSTRAP OVERWRITES */
