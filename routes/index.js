@@ -14,6 +14,15 @@ router.get('/a-team', function(req, res, next) {
 router.get('/book-a-call', function(req, res, next) {
 	res.render('book-a-call', { title: 'Xlera Solutions - Book A Call' });
   });
+router.get('/apply', function(req, res, next) {
+res.render('apply', { title: 'Xlera Solutions - Apply Now' });
+});
+router.get('/step-1', function(req, res, next) {
+res.render('step-1', { title: 'Xlera Solutions - Step 1' });
+});
+router.get('/step-2', function(req, res, next) {
+res.render('step-2', { title: 'Xlera Solutions - Step 2' });
+});
 router.get('/opportunity/:opportunityId', function(req, res, next) {
 	var opportunity = {
 			name: req.params.opportunityId
