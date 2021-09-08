@@ -1,0 +1,423 @@
+body {
+  min-height: 75rem;
+  padding-top: 98px;
+}
+
+// Links
+
+a {
+  transition: all 0.3s ease-in;
+  text-decoration: none;
+  .decorated {
+    text-decoration: underline !important;
+  }
+}
+/* Buttons */
+.btn {
+  // Custom button shape,font and padding based on design.
+  padding: 0.54rem 1.95rem !important;
+  border-width: 2px !important;
+  border-radius: 0.6rem !important;
+  font-weight: 500 !important;
+}
+
+.btn-accent,
+.btn-secondary {
+  color: #ffffff; // Force white text as Bootstraps mixins default to black
+  &:hover {
+    color: #ffffff; // Force white text as Bootstraps mixins default to black
+  }
+}
+
+.btn-outline-white {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #ffffff;
+  transition: all 0.2s ease-in;
+  &:hover {
+    color: #103145;
+    background-color: #ffffff;
+    border-color: #ffffff;
+  }
+}
+
+// about us navigation
+.subnav > a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.subnav > a:hover,
+.subnav > a:active,
+.subnav > a.active {
+  color: #afe48a;
+  text-decoration: none;
+}
+
+// Font Sizes
+.fs {
+  &-6 {
+    font-size: 1.15rem !important;
+  }
+  &-7 {
+    font-size: 1rem !important;
+  }
+  &-9 {
+    font-size: 0.9rem !important;
+  }
+}
+.fw {
+  &-boldest {
+    font-weight: 700 !important;
+  }
+}
+
+// Text
+.text-underline-below {
+  text-underline-position: under;
+}
+.text-shadow {
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+  &-sm {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8) !important;
+  }
+  &-xs {
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4) !important;
+  }
+  &-none {
+    text-shadow: none !important;
+  }
+}
+.lh-md {
+  line-height: 1.6 !important;
+}
+// Padding
+.p {
+  &-6 {
+    padding: 5rem !important;
+  }
+  &-10 {
+    padding: 8rem !important;
+  }
+}
+
+.pt {
+  &-6 {
+    padding-top: 5rem !important;
+  }
+  &-10 {
+    padding-top: 8rem !important;
+  }
+}
+.pb {
+  &-10 {
+    padding-bottom: 8rem !important;
+  }
+}
+.px {
+  &-6 {
+    padding-right: 4rem !important;
+    padding-left: 4rem !important;
+  }
+  &-7 {
+    padding-right: 5rem !important;
+    padding-left: 5rem !important;
+  }
+  &-10 {
+    padding-right: 8rem !important;
+    padding-left: 8rem !important;
+  }
+}
+.py {
+  &-10 {
+    padding-top: 8rem !important;
+    padding-bottom: 8rem !important;
+  }
+}
+// Margins
+.m {
+  &-10 {
+    margin: 6rem !important;
+  }
+}
+.mt {
+  &-10 {
+    margin-top: 6rem !important;
+  }
+  &-15 {
+    margin-top: 7rem !important;
+  }
+}
+.my {
+  &-10 {
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
+  }
+}
+
+// Width
+.w {
+  &-33 {
+    width: 33% !important;
+  }
+  &-55 {
+    width: 55% !important;
+  }
+}
+
+// Borders
+
+.rounded-4 {
+  /* Used on buttons */
+  border-radius: 0.4rem !important;
+}
+
+// Heros
+
+.homepage-hero {
+  background-image: linear-gradient(
+      to right,
+      transparent,
+      37%,
+      #669b41 45%,
+      #669b41 100%
+    ),
+    url("/images/homepage-hero-2.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 525px;
+  position: relative;
+}
+@media (max-width: 767.98px) {
+  .homepage-hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(102, 155, 65, 0.9),
+        rgba(102, 155, 65, 0.9)
+      ),
+      url("/images/homepage-hero-2.png");
+  }
+}
+
+.aboutus-hero {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 49, 70, 0.8),
+      rgba(0, 49, 70, 0.8)
+    ),
+    url("/images/about-us-hero.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 465px;
+  position: relative;
+}
+
+.ateam-hero {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 49, 70, 0.8),
+      rgba(0, 49, 70, 0.8)
+    ),
+    url("/images/ateam-hero.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 465px;
+  position: relative;
+}
+
+/* Mid-Page Heros */
+.victory-hero {
+  background-image: linear-gradient(to right, transparent, 42%, #003146 58%),
+    url("/images/victory-hero.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 665px;
+  position: relative;
+  line-height: 2;
+}
+@media (max-width: 767.98px) {
+  .victory-hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 49, 70, 0.9),
+        rgba(0, 49, 70, 0.9)
+      ),
+      url("/images/victory-hero.png");
+  }
+}
+@media (max-width: 991.98px) {
+  .victory-hero {
+    line-height: 1.25;
+  }
+}
+
+.engines-hero {
+  background-image: linear-gradient(to right, transparent, 42%, #ffffff 58%),
+    url("/images/engine-hero.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 665px;
+  position: relative;
+  line-height: 2;
+}
+@media (max-width: 767.98px) {
+  .engines-hero {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 49, 70, 0.9),
+        rgba(0, 49, 70, 0.9)
+      ),
+      url("/images/engine-hero.png");
+  }
+  .text-primary-to-white {
+    color: #ffffff !important;
+  }
+  .btn-outline-primary {
+    color: #ffffff !important;
+    background-color: transparent !important;
+    border-color: #ffffff !important;
+    transition: all 0.2s ease-in;
+    &:hover {
+      color: #103145 !important;
+      background-color: #ffffff !important;
+      border-color: #ffffff !important;
+    }
+  }
+}
+/* Lists */
+.believe-list > li {
+  position: relative;
+  margin-left: 35px;
+  &:before {
+    position: absolute;
+    left: -60px;
+    padding-right: 15px;
+    content: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='35' height='35' fill='rgb(102, 155, 65)' class='text-secondary bi bi-arrow-right-circle' viewBox='0 0 16 16'> <path fill-rule='evenodd' d='M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z' /></svg>");
+    height: auto;
+    width: 35px;
+  }
+}
+
+#believe:before,
+#dontbelieve:before {
+  content: "";
+  display: block;
+  height: 115px; /* fixed header height*/
+  margin: -115px 0 0; /* negative fixed header height */
+}
+
+// Responsive Breakpoints
+/* XS Screen */
+@media (max-width: 576px) {
+  .believe-list > li {
+    margin-left: 55px;
+  }
+  .believe-list > li:before {
+    left: -45px;
+  }
+}
+
+/* SM Screen */
+@media (min-width: 576px) {
+  .m-sm-10 {
+    margin: 6rem !important;
+  }
+  .my-sm-10 {
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
+  }
+  .py-md-10 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+  .lh-sm-1 {
+    line-height: 1 !important;
+  }
+  .lh-sm-sm {
+    line-height: 1.25 !important;
+  }
+  .lh-sm-base {
+    line-height: 1.5 !important;
+  }
+  .lh-sm-lg {
+    line-height: 2 !important;
+  }
+}
+/* MD Screen */
+@media (min-width: 768px) {
+  .w-md-50 {
+    width: 50% !important;
+  }
+  .w-md-65 {
+    width: 65% !important;
+  }
+  .m-md-10 {
+    margin: 6rem !important;
+  }
+  .my-md-10 {
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
+  }
+  .py-md-10 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+  .lh-md-1 {
+    line-height: 1 !important;
+  }
+
+  .lh-md-sm {
+    line-height: 1.25 !important;
+  }
+
+  .lh-md-base {
+    line-height: 1.5 !important;
+  }
+
+  .lh-md-lg {
+    line-height: 2 !important;
+  }
+}
+/* LG Screen */
+@media (min-width: 992px) {
+  .w-lg-50 {
+    width: 50% !important;
+  }
+  .w-lg-55 {
+    width: 55% !important;
+  }
+  .m-lg-10 {
+    margin: 6rem !important;
+  }
+  .my-lg-10 {
+    margin-top: 6rem !important;
+    margin-bottom: 6rem !important;
+  }
+  .py-lg-10 {
+    padding-top: 6rem !important;
+    padding-bottom: 6rem !important;
+  }
+  .py-lg-4-5 {
+    padding-top: 2.25rem !important;
+    padding-bottom: 2.25rem !important;
+  }
+  .lh-lg-1 {
+    line-height: 1 !important;
+  }
+
+  .lh-lg-sm {
+    line-height: 1.25 !important;
+  }
+
+  .lh-lg-base {
+    line-height: 1.5 !important;
+  }
+
+  .lh-lg-lg {
+    line-height: 2 !important;
+  }
+}
