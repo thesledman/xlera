@@ -26,6 +26,7 @@
     "vanilla-back-to-top": "^7.2.1",
     "vanillajs-scrollspy": "^2.2.0",
     "vue": "^2.6.14",
+    "vue-the-mask": "^0.11.1",
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {

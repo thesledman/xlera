@@ -21,11 +21,7 @@ var paths = {
 mix.js([
 	paths.resource + 'js/site.js',
 	paths.resource + 'js/contact.js'
-], paths.public + 'js/site.js');
-
-mix.js([
-	paths.resource + 'js/contact.js',
-], paths.public + 'js/contact.js').vue();
+], paths.public + 'js/site.js').vue();
 
 mix.sass(paths.resource + 'scss/app.scss', paths.public + 'css/site.css')
 	.purgeCss({

@@ -1,4 +1,4 @@
-import { required,requiredIf } from 'vuelidate/lib/validators';
+import { required,requiredIf,email } from 'vuelidate/lib/validators';
 if (document.getElementById("contactForm")) {
 	var contact = new Vue({
 		el: '#contactForm',
@@ -10,9 +10,9 @@ if (document.getElementById("contactForm")) {
 					'firstName': '',
 					'lastName': '',
 					'companyName': '',
-					'companyEmail': '',
+					'email': '',
 					'phone': '',
-					'preferPhone': true,
+					'preferPhone': false,
 					'whatsOnYourMind': ''
 				},
 			}
@@ -28,12 +28,13 @@ if (document.getElementById("contactForm")) {
 				'companyName': {
 					required
 				},
-				'companyEmail': {
-					required
+				'email': {
+					required,
+					email
 				},
 				'phone': {
 					required : requiredIf(function (form) {
-						return form.preferPhone == true;
+						return form.preferPhone == true
 					  })
 				},
 				'preferPhone': {},
@@ -41,17 +42,13 @@ if (document.getElementById("contactForm")) {
 		},
 		methods: {
 			submit() {
-			console.log('submit!')
-			this.$v.$touch()
-			if (this.$v.$invalid) {
-				this.submitStatus = 'ERROR'
-			} else {
-				// do your submit logic here
-				this.submitStatus = 'PENDING'
-				setTimeout(() => {
-				this.submitStatus = 'OK'
-				}, 500)
-			}
+				console.log('submit!')
+				this.$v.$touch()
+				if (this.$v.$invalid) {
+					this.submitStatus = 'ERROR'
+				} else {
+					this.$refs.form.submit();
+				}
 			}
 		}
 	});

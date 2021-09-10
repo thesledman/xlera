@@ -15,5 +15,9 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 });
 
+// Form components validation/masking
 import Vuelidate from 'vuelidate';
 Vue.use(Vuelidate);
+
+import VueTheMask from 'vue-the-mask';
+Vue.use(VueTheMask);
