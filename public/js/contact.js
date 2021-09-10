@@ -1325,7 +1325,7 @@ if (document.getElementById("contactForm")) {
           'companyName': '',
           'companyEmail': '',
           'phone': '',
-          'preferPhone': '',
+          'preferPhone': true,
           'whatsOnYourMind': ''
         }
       };
@@ -1337,7 +1337,19 @@ if (document.getElementById("contactForm")) {
         },
         'lastName': {
           required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__.required
-        }
+        },
+        'companyName': {
+          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__.required
+        },
+        'companyEmail': {
+          required: vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__.required
+        },
+        'phone': {
+          required: (0,vuelidate_lib_validators__WEBPACK_IMPORTED_MODULE_0__.requiredIf)(function (form) {
+            return form.preferPhone == true;
+          })
+        },
+        'preferPhone': {}
       }
     },
     methods: {

@@ -1,4 +1,4 @@
-import { required } from 'vuelidate/lib/validators';
+import { required,requiredIf } from 'vuelidate/lib/validators';
 if (document.getElementById("contactForm")) {
 	var contact = new Vue({
 		el: '#contactForm',
@@ -12,7 +12,7 @@ if (document.getElementById("contactForm")) {
 					'companyName': '',
 					'companyEmail': '',
 					'phone': '',
-					'preferPhone': '',
+					'preferPhone': true,
 					'whatsOnYourMind': ''
 				},
 			}
@@ -20,11 +20,23 @@ if (document.getElementById("contactForm")) {
 		validations: {
 			form: {
 				'firstName': {
-				required
+					required
 				},
 				'lastName': {
 					required
 				},
+				'companyName': {
+					required
+				},
+				'companyEmail': {
+					required
+				},
+				'phone': {
+					required : requiredIf(function (form) {
+						return form.preferPhone == true;
+					  })
+				},
+				'preferPhone': {},
 			}
 		},
 		methods: {
