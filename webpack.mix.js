@@ -9,7 +9,7 @@ mix.options({
     postCss: [],
     terser: {},
     autoprefixer: {},
-    legacyNodePolyfills: false
+    legacyNodePolyfills: true
 });
 
 var paths = {
@@ -20,7 +20,12 @@ var paths = {
 
 mix.js([
 	paths.resource + 'js/site.js',
+	paths.resource + 'js/contact.js'
 ], paths.public + 'js/site.js');
+
+mix.js([
+	paths.resource + 'js/contact.js',
+], paths.public + 'js/contact.js').vue();
 
 mix.sass(paths.resource + 'scss/app.scss', paths.public + 'css/site.css')
 	.purgeCss({
