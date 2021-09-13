@@ -7,7 +7,7 @@
       #669b41 45%,
       #669b41 100%
     ),
-    url("/images/homepage-hero-2.png");
+    url("/images/homepage-hero.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,7 +21,7 @@
         rgba(102, 155, 65, 0.9),
         rgba(102, 155, 65, 0.9)
       ),
-      url("/images/homepage-hero-2.png");
+      url("/images/homepage-hero.png");
   }
 }
 
@@ -69,7 +69,12 @@
 
 /* Mid-Page Heros */
 .victory-hero {
-  background-image: linear-gradient(to right, transparent, 42%, #003146 58%),
+  background-image: linear-gradient(
+      to right,
+      transparent,
+      42%,
+      rgb(1, 49, 70) 58%
+    ),
     url("/images/victory-hero.png");
   background-position: center center;
   background-repeat: no-repeat;
@@ -78,19 +83,31 @@
   position: relative;
   line-height: 2;
 }
-@media (max-width: 767.98px) {
+
+/* @media (max-width: 767.98px) {
   .victory-hero {
     background-image: linear-gradient(
         to bottom,
-        rgba(0, 49, 70, 0.9),
-        rgba(0, 49, 70, 0.9)
+        rgba(1, 49, 70, 0.7),
+        rgba(1, 49, 70, 0.7)
       ),
       url("/images/victory-hero.png");
+  }
+} */
+@media (max-width: 1280px) {
+  /* Keep text from escaping the image */
+  .victory-hero {
+    line-height: 1.5;
   }
 }
 @media (max-width: 991.98px) {
   .victory-hero {
-    line-height: 1.25;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(1, 49, 70, 0.7),
+        rgba(1, 49, 70, 0.7)
+      ),
+      url("/images/victory-hero.png");
   }
 }
 

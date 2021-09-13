@@ -32,6 +32,9 @@ router.get('/opportunity/:opportunityId', function(req, res, next) {
 router.get('/contact-us', function(req, res, next) {
 	res.render('contact-us', { title: 'Xlera Solutions - Contact' });
 });
+router.get('/contact-us/:submitted', function(req, res, next) {
+	res.render('contact-us', { title: 'Xlera Solutions - Contact','status':'submitted' });
+});
 router.get('/privacy', function(req, res, next) {
 	res.render('privacy', { title: 'Xlera Solutions - Privacy Policy' });
 });

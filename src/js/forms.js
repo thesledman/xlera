@@ -1,4 +1,18 @@
 import { required,requiredIf,email } from 'vuelidate/lib/validators';
+import downloadForm from './components/downloadForm';
+
+if (document.getElementById("modalForm")) {
+	var download = new Vue({
+		el: '#modalForm',
+		components: {
+			downloadForm
+		},
+		data() {
+			return{}
+		},
+	});
+}
+
 if (document.getElementById("contactForm")) {
 	var contact = new Vue({
 		el: '#contactForm',

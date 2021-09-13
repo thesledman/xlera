@@ -3,13 +3,13 @@
 </div>
 <main>
   <section class="py-5">
-    <div class="container">
+    <div class="container">˜
       <div class="row">
         <div class="col-12 col-md-7 order-2 order-md-1">
           <p class="fs-3 fw-bolder text-shadow-xs">Prefer we reach out to you?</p>
           <p>Please use the form below to contact us. We do our best to respond within two business days, but it may take longer based on the volume of correspondence we recieve.</p>
           <hr class="bg-secondary">
-          <form class="needs-validation" action="https://www.getdrip.com/forms/480805219/submissions" method="post" novalidate id="contactForm" v-on:submit.prevent="submit()" data-drip-embedded-form="480805219" ref="form">
+          <form class="needs-validation" action="https://www.getdrip.com/forms/480805219/submissions" method="post" novalidate id="contactForm" v-on:submit.prevent="submit()" data-drip-embedded-form="214638263" ref="form">
             <div class="mb-3">
               <label for="firstName" class="form-label">First Name</label>
               <div class="input-group has-validation">
@@ -35,7 +35,7 @@
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Company Email</label>
-              <input type="text" class="form-control" id="email" v-model.trim="$v.form.email.$model" :class="{ 'is-invalid': $v.form.email.$error }">
+              <input type="text" class="form-control" name="fields[email]" id="email" v-model.trim="$v.form.email.$model" :class="{ 'is-invalid': $v.form.email.$error }">
               <div class="invalid-feedback fst-italic">
                 Please enter a valid email address.
               </div>
