@@ -267,6 +267,16 @@ a {
   .lh-md-lg {
     line-height: 2 !important;
   }
+  .display-lg-1 {
+    font-size: calc(1.625rem + 4.5vw);
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .display-lg-2 {
+    font-size: calc(1.575rem + 3.9vw);
+    font-weight: 300;
+    line-height: 1.2;
+  }
 }
 /* LG Screen */
 @media (min-width: 992px) {
@@ -305,5 +315,16 @@ a {
 
   .lh-lg-lg {
     line-height: 2 !important;
+  }
+
+  .display-md-1 {
+    font-size: calc(1.625rem + 4.5vw) !important;
+    font-weight: 300;
+    line-height: 1.2 !important;
+  }
+  .display-md-2 {
+    font-size: calc(1.575rem + 3.9vw) !important;
+    font-weight: 300;
+    line-height: 1.2 !important;
   }
 }

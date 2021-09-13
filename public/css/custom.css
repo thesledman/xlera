@@ -94,12 +94,6 @@
       url("/images/victory-hero.png");
   }
 } */
-@media (max-width: 1280px) {
-  /* Keep text from escaping the image */
-  .victory-hero {
-    line-height: 1.5;
-  }
-}
 @media (max-width: 991.98px) {
   .victory-hero {
     background-image: linear-gradient(
@@ -133,7 +127,7 @@
   .text-primary-to-white {
     color: #ffffff !important;
   }
-  .btn-outline-primary {
+  /* .btn-outline-primary {
     color: #ffffff !important;
     background-color: transparent !important;
     border-color: #ffffff !important;
@@ -144,5 +138,5 @@
     color: #103145 !important;
     background-color: #ffffff !important;
     border-color: #ffffff !important;
-  }
+  } */
 }
