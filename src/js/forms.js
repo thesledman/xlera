@@ -1,6 +1,6 @@
 import { required,requiredIf,email } from 'vuelidate/lib/validators';
 import downloadForm from './components/downloadForm';
-
+import formAlerts from './components/formAlerts';
 if (document.getElementById("modalForm")) {
 	var download = new Vue({
 		el: '#modalForm',
@@ -16,7 +16,9 @@ if (document.getElementById("modalForm")) {
 if (document.getElementById("contactForm")) {
 	var contact = new Vue({
 		el: '#contactForm',
-		components: {},
+		components: {
+			formAlerts,
+		},
 		data() {
 			return{
 				submitStatus: null,
@@ -54,15 +56,43 @@ if (document.getElementById("contactForm")) {
 				'preferPhone': {},
 			}
 		},
+		computed: {
+		  formStatus() {
+			return this.submitStatus;
+		  }
+		},
 		methods: {
 			submit() {
-				console.log('submit!')
 				this.$v.$touch()
 				if (this.$v.$invalid) {
-					this.submitStatus = 'ERROR'
+					this.submitStatus = 'error'
 				} else {
-					this.$refs.form.submit();
+					//this.$refs.form.submit();
+					var self = this;
+					axios.post('/contact-us', self.form)
+					  .then(function (response) {
+						self.submitStatus = 'success';
+						self.reset();
+						//console.log(response);
+					  })
+					  .catch(function (error) {
+						self.submitStatus = 'error';
+						console.log(error);
+					  });
 				}
+			},
+			reset(){
+				this.$v.$reset();
+				this.form = {
+					'firstName': '',
+					'lastName': '',
+					'companyName': '',
+					'email': '',
+					'phone': '',
+					'preferPhone': false,
+					'whatsOnYourMind': ''
+				};
+				setTimeout(function () { this.submitStatus = null; }.bind(this), 8000);
 			}
 		}
 	});

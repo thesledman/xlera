@@ -10,21 +10,30 @@
   <section class="py-5">
     <div class="container">
 
-      <h1 class="text-center fw-bolder text-shadow-sm"><span class="text-primary fst-italic">Imagine</span> a world…</h1>
+      <h1 class="text-center fw-bolder text-shadow-sm mb-4"><span class="text-primary fst-italic">Imagine</span> a world…</h1>
       <h3 class="text-secondary text-center fw-bolder mb-4 text-shadow-xs">surrounded by <span class="text-primary fst-italic">A-Players</span>, drawing inspiration and creativity from each other. Make an <span class="text-primary fst-italic">IMPACT</span> across a variety of projects, sharpening skills through experience, while helping others move forward in their FPGA journey.
       </h3>
       <p class="text-center fs-3 text-shadow-xs">That’s what we do… and we need your help!</p>
-
     </div>
   </section>
   <section class="py-5 bg-secondary">
     <div class="container">
       <div class="row">
         <div class="d-flex flex-column justify-content-center align-items-center col-12">
-          <h1 class="text-white text-center text-shadow">
-            <%= opportunity.name %>
+          <h1 class="d-flex flex-row align-items-center justify-content-center text-white">
+            <p class="text-shadow mb-0"><%= opportunity.name %></p> <a href="/apply" class="btn btn-lg btn-primary ms-3">Apply Now!</a>
           </h1>
-          <a href="/apply" class="btn btn-lg btn-primary mt-3">Apply Now!</a>
+          <a href="#details" class="link-light text-shadow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+            </svg>
+            View Details
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+              <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
@@ -57,12 +66,43 @@
       </div>
     </div>
   </section>
-  <section class="pb-5">
+  <section class="pb-4">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <p class="fs-4 text-center text-shadow-xs">If inside you are saying <span class="text-secondary fw-bold">&ldquo;HELL YEAH!&rdquo;</span> then keep reading...</p>
-          <p class="fs-4 text-center text-shadow-xs">When you join the Xlera Solutions A-Team you get to work with a hand-selected<br> and battle-tested <span class="text-secondary fw-bold">BADASS TEAM</span> of extraordinary people.</p>
+          <p class="fs-4 text-center text-shadow-xs">If inside you are saying <span class="text-secondary fw-bolder text-shadow-xs">&ldquo;HELL YEAH!&rdquo;</span> then keep reading...</p>
+          <p class="fs-4 text-center text-shadow-xs">When you join the Xlera Solutions A-Team you get to work with a hand-selected<br> and battle-tested <span class="text-secondary fw-bolder text-shadow-xs">BADASS TEAM</span> of extraordinary people.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pb-5" id="details">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-md-6">
+          <div class="border border-primary border-2 p-5 h-100">
+            <h3 class="text-center mb-3 text-secondary text-shadow-sm text-decoration-underline text-underline-offset-md">CLIENT EXPERIENCE PROFESSIONAL</h3>
+            <p class="text-left">In the production site this would be a breif explanation of the job opportunity. The details of the opportunity will be imported from the jobs file located in the opportunities folder in the website root.</p>
+            <h5 class="text-left text-primary text-shadow-sm mb-3">What you will do…</h5>
+            <ul class="list-unstyled bullet-list">
+              <li>You will do this</li>
+              <li>You will do that</li>
+              <li>You will do the other thing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mt-4 mt-md-0">
+          <div class="border border-primary border-2 p-5 h-100">
+            <h3 class="text-center mb-4 text-secondary text-shadow-sm">You’re the <span class="text-primary fw-bolder text-shadow-xs">HIGH-ACHIEVER</span><br>we’re looking for if...</h3>
+            <ul class="list-unstyled checkbox-list">
+              <li>You have high standards for your work.</li>
+              <li>You drive a blue car</li>
+              <li>You part your hair to the right.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12">
+          <p class="text-center text-shadow-xs fs-4 pt-4"><span class="fw-bolder text-secondary text-shadow-sm">COMPENSATION:</span> <span class="fw-bolder">BETTER</span> than competitive with bonuses with unlimited growth opportunities.</p>
         </div>
       </div>
     </div>
