@@ -97,3 +97,87 @@ if (document.getElementById("contactForm")) {
 		}
 	});
 }
+
+if (document.getElementById("qlrForm")) {
+	var contact = new Vue({
+		el: '#qlrForm',
+		components: {
+			formAlerts,
+		},
+		data() {
+			return{
+				submitStatus: null,
+				form: {
+					'firstName': '',
+					'lastName': '',
+					'companyName': '',
+					'email': '',
+					'phone': '',
+					'preferPhone': false,
+					'tellUsALittleAboutYourInterest': ''
+				},
+			}
+		},
+		validations: {
+			form: {
+				'firstName': {
+					required
+				},
+				'lastName': {
+					required
+				},
+				'companyName': {
+					required
+				},
+				'email': {
+					required,
+					email
+				},
+				'phone': {
+					required : requiredIf(function (form) {
+						return form.preferPhone == true
+					  })
+				},
+				'preferPhone': {},
+			}
+		},
+		computed: {
+		  formStatus() {
+			return this.submitStatus;
+		  }
+		},
+		methods: {
+			submit() {
+				this.$v.$touch()
+				if (this.$v.$invalid) {
+					this.submitStatus = 'error'
+				} else {
+					//this.$refs.form.submit();
+					var self = this;
+					axios.post('/qlr', self.form)
+					  .then(function (response) {
+						self.submitStatus = 'success';
+						self.reset();
+						//console.log(response);
+					  })
+					  .catch(function (error) {
+						self.submitStatus = 'error';
+						console.log(error);
+					  });
+				}
+			},
+			reset(){
+				this.$v.$reset();
+				this.form = {
+					'firstName': '',
+					'lastName': '',
+					'email': '',
+					'phone': '',
+					'preferPhone': false,
+					'tellUsALittleAboutYourInterest': ''
+				};
+				setTimeout(function () { this.submitStatus = null; }.bind(this), 8000);
+			}
+		}
+	});
+}

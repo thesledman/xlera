@@ -1,0 +1,101 @@
+<main>
+  <section class="py-5">
+    <div class="container">
+
+      <h1 class="text-center fw-bolder text-shadow-sm mb-4">Are you in tune with the <span class="text-secondary">FPGA</span> Market?</h1>
+      <p class="fs-7 fw-bold">
+        Are you operating in technical sales, field applications, or simply have a deep network of those leveraging the power of FPGAs? If so, you likely have your ears tuned into the happenings of the FPGA market, always listening for opportunities to make connections and help out.
+      </p>
+      <p class="fs-7 fw-bold">Often you hear about those looking for top FPGA talent to help their FPGA project lead to a victory. Yes, indeed it can be hard to find good “FPGA folks” when you need them, especially when there is urgency with that need.</p>
+      <p class="fs-7 fw-bold">Connecting people that have FPGA needs with those that can help is good business ... it’s good for everyone involved! In the course of your everyday activities, simply make the connection with Xlera Solutions and share in the resulting revenue - that’s it! There is no commitment on your part, we do all the legwork. You get to be the hero by helping someone solve their problem, and get paid for making it happen!</p>
+      <p class="fs-7 fw-bold">With Qualified Leads Registration (QLR) you will earn up to 5% of the revenue that Xlera Solutions invoices to those new clients for the first two months of engagement!</p>
+      <p class="fs-4 fw-bold text-secondary text-shadow-sm">The QLR earning potential is weighted by five criteria:</p>
+      <ul class="list-unstyled bullet-list fs-7 fw-bold">
+        <li>Points of contact</li>
+        <li>Access to decision makers</li>
+        <li>Funded / Approved Project</li>
+        <li>Time to Work-Start</li>
+        <li>Project size and duration</li>
+      </ul>
+    </div>
+  </section>
+  <section class="py-5 bg-secondary-light">
+    <div class="container">
+      <div class="row">
+        <div class="d-flex justify-content-center align-items-center col col-md-10 offset-md-1">
+          <p class="text-center fs-4 fw-bold text-shadow-light mb-0"><span class="text-secondary fw-bolder text-shadow-sm">Want to earn much more?</span> While Xlera Solutions does the legwork for the QLR program, there are opportunities for much higher earnings over a much longer duration if you are interested in doing the legwork part as well. Be sure to inquire!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-5" id="qlrForm">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <p class="fs-1 text-center fw-bolder text-shadow-xs">Get started now!</p>
+          <form class="needs-validation" action="/qlr" method="post" novalidate id="qlrForm" v-on:submit.prevent="submit()" ref="form">
+            <form-alerts :status="formStatus"></form-alerts>
+            <div class="mb-3">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" class="form-control" id="firstName" v-model.trim="$v.form.firstName.$model" :class="{ 'is-invalid': $v.form.firstName.$error }">
+              <div class="invalid-feedback fst-italic">
+                Please enter your First Name.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" class="form-control" id="lastName" v-model.trim="$v.form.lastName.$model" :class="{ 'is-invalid': $v.form.lastName.$error }">
+              <div class="invalid-feedback fst-italic">
+                Please enter your Last Name.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" class="form-control" id="email" v-model.trim="$v.form.email.$model" :class="{ 'is-invalid': $v.form.email.$error }">
+              <div class="invalid-feedback fst-italic">
+                Please enter your Email.
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="yes" id="preferPhone" v-model.trim="$v.form.preferPhone.$model">
+                <label class="form-check-label" for="preferPhone">
+                  I would prefer to be contacted via phone.
+                </label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phone" v-model.trim="$v.form.phone.$model" v-mask="'(###) ###-####'" :class="{ 'is-invalid': $v.form.phone.$error }">
+              <div class="invalid-feedback fst-italic">
+                Please provide a phone number for us to contact you Or uncheck the box below.
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="tellUsALittleAboutYourInterest" class="form-label">Tell us a little about your interest and why you would be AWESOME at this.</label>
+              <textarea class="form-control" id="tellUsALittleAboutYourInterest" rows="3" maxLength="180" v-model="form.tellUsALittleAboutYourInterest"></textarea>
+            </div>
+            <div class="col-12 mt-4">
+              <button class="btn btn-primary" type="submit" onClick>Submit form</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-center align-items-center">
+          <image class="img-fluid d-none d-lg-block" src="images/qlr-form.jpg"></image>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="fw-bolder text-secondary text-shadow-sm">Why Companies Need Your Help</h1>
+          <p class="fs-4 text-shadow-xs">Want to better understand why it's hard for companies to find top FPGA talent? Click the button below to see...</p>
+
+          <a href="/#FPGAtalent" class="btn btn-outline-primary mt-3 mt-md-0"> Learn why FPGA talent is hard to find (and
+            keep)</a>
+        </div>
+      </div>
+    </div>
+  </section>

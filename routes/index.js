@@ -15,6 +15,16 @@ router.get('/a-team', function(req, res, next) {
 router.get('/book-a-call', function(req, res, next) {
 	res.render('book-a-call', { title: 'Xlera Solutions - Book A Call' });
 });
+router.get('/contact-us', function(req, res, next) {
+	res.render('contact-us', { title: 'Xlera Solutions - Contact' });
+});
+router.get('/privacy', function(req, res, next) {
+	res.render('privacy', { title: 'Xlera Solutions - Privacy Policy' });
+});
+router.get('/qlr', function(req, res, next) {
+	res.render('qlr', { title: 'Xlera Solutions - Qualified Leads Registration (QLR)' });
+});
+// Dynamic Pages
 router.get('/apply', function(req, res, next) {
 	res.render('apply', { title: 'Xlera Solutions - Apply Now' });
 });
@@ -33,14 +43,6 @@ router.get('/opportunity/:opportunityId', function(req, res, next) {
 	};
 	res.render('opportunity', locals);
 });
-router.get('/contact-us', function(req, res, next) {
-	res.render('contact-us', { title: 'Xlera Solutions - Contact' });
-});
-router.get('/privacy', function(req, res, next) {
-	res.render('privacy', { title: 'Xlera Solutions - Privacy Policy' });
-});
-// Dynamic Pages
-
 // Post Routes
 router.post('/contact-us', formController.contact_post);
 

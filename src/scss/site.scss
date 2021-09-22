@@ -97,6 +97,9 @@ a {
   &-xs {
     text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.4) !important;
   }
+  &-light {
+    text-shadow: 1px 1px 1px rgb(175 175 175 / 80%) !important;
+  }
   &-none {
     text-shadow: none !important;
   }
