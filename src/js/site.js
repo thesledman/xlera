@@ -9,11 +9,13 @@ import { addBackToTop } from 'vanilla-back-to-top'
 addBackToTop({
     scrollDuration: 200
   });
-// Init (opt-in) bootstrap css tool tips
+// Init (opt-in) Bootstrap css tool-tips
 var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 });
+// Init Bootstrap Modal
+var downloadModal = new bootstrap.Modal(document.getElementById('downloadModal'));
 
 // Form components validation/masking
 import Vuelidate from 'vuelidate';

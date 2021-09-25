@@ -10,11 +10,12 @@
           <p>Please use the form below to contact us. We do our best to respond within two business days, but it may take longer based on the volume of correspondence we recieve.</p>
           <hr class="bg-secondary">
           <form class="needs-validation" action="/contact-us" method="post" novalidate id="contactForm" v-on:submit.prevent="submit()" ref="form">
+            <input type="hidden" name="page" value="Contact Us Page">
             <form-alerts :status="formStatus"></form-alerts>
             <div class="mb-3">
               <label for="firstName" class="form-label">First Name</label>
               <div class="input-group has-validation">
-                <input type="text" class="form-control" id="firstName" v-model.trim="$v.form.firstName.$model" :class="{ 'is-invalid': $v.form.firstName.$error }">
+                <input type="text" class="form-control" id="firstName" name="firstName" v-model.trim="$v.form.firstName.$model" :class="{ 'is-invalid': $v.form.firstName.$error }">
                 <div class="invalid-feedback fst-italic">
                   Please enter your first name.
                 </div>
@@ -22,35 +23,35 @@
             </div>
             <div class="mb-3">
               <label for="lastName" class="form-label">Last Name</label>
-              <input type="text" class="form-control" id="lastName" v-model.trim="$v.form.lastName.$model" :class="{ 'is-invalid': $v.form.lastName.$error }">
+              <input type="text" class="form-control" id="lastName" name="lastName" v-model.trim="$v.form.lastName.$model" :class="{ 'is-invalid': $v.form.lastName.$error }">
               <div class="invalid-feedback fst-italic">
                 Please enter your Last Name.
               </div>
             </div>
             <div class="mb-3">
               <label for="companyName" class="form-label">Company Name</label>
-              <input type="text" class="form-control" id="companyName" v-model.trim="$v.form.companyName.$model" :class="{ 'is-invalid': $v.form.companyName.$error }">
+              <input type="text" class="form-control" id="companyName" name="companyName" v-model.trim="$v.form.companyName.$model" :class="{ 'is-invalid': $v.form.companyName.$error }">
               <div class="invalid-feedback fst-italic">
                 Please enter your Company Name.
               </div>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Company Email</label>
-              <input type="text" class="form-control" name="fields[email]" id="email" v-model.trim="$v.form.email.$model" :class="{ 'is-invalid': $v.form.email.$error }">
+              <input type="text" class="form-control" name="email" id="email" v-model.trim="$v.form.email.$model" :class="{ 'is-invalid': $v.form.email.$error }">
               <div class="invalid-feedback fst-italic">
                 Please enter a valid email address.
               </div>
             </div>
             <div class="mb-3">
               <label for="phone" class="form-label">Phone</label>
-              <input type="tel" class="form-control" id="phone" v-model.trim="$v.form.phone.$model" v-mask="'(###) ###-####'" :class="{ 'is-invalid': $v.form.phone.$error }">
+              <input type="tel" class="form-control" id="phone" name="phone" v-model.trim="$v.form.phone.$model" v-mask="'(###) ###-####'" :class="{ 'is-invalid': $v.form.phone.$error }">
               <div class="invalid-feedback fst-italic">
                 Please provide a phone number for us to contact you Or uncheck the box below.
               </div>
             </div>
             <div class="mb-3">
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="yes" id="preferPhone" v-model.trim="$v.form.preferPhone.$model">
+                <input class="form-check-input" type="checkbox" value="yes" name="preferPhone" id="preferPhone" v-model.trim="$v.form.preferPhone.$model">
                 <label class="form-check-label" for="preferPhone">
                   I would prefer to be contacted via phone.
                 </label>
@@ -58,7 +59,7 @@
             </div>
             <div class="mb-3">
               <label for="whatsOnYourMind" class="form-label">What’s on your mind?</label>
-              <textarea class="form-control" id="whatsOnYourMind" rows="3" maxLength="180" v-model="form.whatsOnYourMind"></textarea>
+              <textarea class="form-control" id="whatsOnYourMind" name="whatsOnYourMind" rows="3" maxLength="180" v-model="form.whatsOnYourMind"></textarea>
             </div>
             <div class="col-12 mt-4">
               <button class="btn btn-primary" type="submit" onClick>Submit form</button>

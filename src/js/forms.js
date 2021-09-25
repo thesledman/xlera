@@ -1,15 +1,23 @@
 import { required,requiredIf,email } from 'vuelidate/lib/validators';
 import downloadForm from './components/downloadForm';
 import formAlerts from './components/formAlerts';
-if (document.getElementById("modalForm")) {
+
+if (document.getElementById("downloadForm")) {
 	var download = new Vue({
-		el: '#modalForm',
+		el: '#downloadForm',
 		components: {
 			downloadForm
 		},
 		data() {
 			return{}
 		},
+		methods: {
+			closeModal(){
+				var myModalEl = document.getElementById('downloadModal');
+				var modal = bootstrap.Modal.getInstance(myModalEl);
+				modal.hide();
+			}
+		}
 	});
 }
 
@@ -63,22 +71,14 @@ if (document.getElementById("contactForm")) {
 		},
 		methods: {
 			submit() {
+				var self = this;
 				this.$v.$touch()
 				if (this.$v.$invalid) {
 					this.submitStatus = 'error'
 				} else {
-					//this.$refs.form.submit();
-					var self = this;
-					axios.post('/contact-us', self.form)
-					  .then(function (response) {
-						self.submitStatus = 'success';
-						self.reset();
-						//console.log(response);
-					  })
-					  .catch(function (error) {
-						self.submitStatus = 'error';
-						console.log(error);
-					  });
+					this.$refs.form.submit();
+					this.submitStatus = 'success';
+					this.reset();
 				}
 			},
 			reset(){
@@ -110,7 +110,6 @@ if (document.getElementById("qlrForm")) {
 				form: {
 					'firstName': '',
 					'lastName': '',
-					'companyName': '',
 					'email': '',
 					'phone': '',
 					'preferPhone': false,
@@ -124,9 +123,6 @@ if (document.getElementById("qlrForm")) {
 					required
 				},
 				'lastName': {
-					required
-				},
-				'companyName': {
 					required
 				},
 				'email': {
@@ -152,18 +148,9 @@ if (document.getElementById("qlrForm")) {
 				if (this.$v.$invalid) {
 					this.submitStatus = 'error'
 				} else {
-					//this.$refs.form.submit();
-					var self = this;
-					axios.post('/qlr', self.form)
-					  .then(function (response) {
-						self.submitStatus = 'success';
-						self.reset();
-						//console.log(response);
-					  })
-					  .catch(function (error) {
-						self.submitStatus = 'error';
-						console.log(error);
-					  });
+					this.$refs.form.submit();
+					this.submitStatus = 'success';
+					this.reset();
 				}
 			},
 			reset(){

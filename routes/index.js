@@ -1,11 +1,16 @@
 var express = require('express');
 var router = express.Router();
-var formController = require('../controllers/formController');
-// GET home page.
+//var formController = require('../controllers/formController');
+var contactController = require('../controllers/contactController');
+var qlrController = require('../controllers/qlrController');
+var reportController = require('../controllers/reportController');
+
+// Routes
+// GET | home page.
 router.get('/', function(req, res, next) {
 	res.render('index', { title: 'Xlera Solutions - Home Page' });
 });
-// Static Pages
+// GET | Static Pages
 router.get('/about', function(req, res, next) {
 	res.render('about', { title: 'Xlera Solutions - About Us' });
 });
@@ -43,7 +48,8 @@ router.get('/opportunity/:opportunityId', function(req, res, next) {
 	};
 	res.render('opportunity', locals);
 });
-// Post Routes
-router.post('/contact-us', formController.contact_post);
-
+// Post | Pages
+router.post('/contact-us', contactController.form_post);
+router.post('/qlr',qlrController.form_post);
+router.post('/download-form',reportController.form_post);
 module.exports = router;

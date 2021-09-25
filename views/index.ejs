@@ -187,8 +187,8 @@
         </div>
         <div class="modal-body">
           <p class="fs-4 fw-bold">Get access to the report instantly!</p>
-          <div id="modalForm">
-            <download-form></download-form>
+          <div id="downloadForm">
+            <download-form @complete="closeModal"></download-form>
           </div>
         </div>
       </div>

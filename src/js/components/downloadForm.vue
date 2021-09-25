@@ -1,44 +1,46 @@
 <template>
 	<div>
-		<form action="https://www.getdrip.com/forms/732134178/submissions" @submit.prevent="submit" method="post" data-drip-embedded-form="732134178" ref="downloadForm">
+		<form-alerts :status="formStatus"></form-alerts>
+		<form action="/download-form" @submit.prevent="submit" method="post" ref="form">
+		<input type="hidden" name="page" value="Download Report Modal">
 			<div class="mb-3">
 				<label for="firstName" class="form-label">First Name</label>
-				<input type="text" class="form-control" id="firstName" v-model.trim="$v.form.firstName.$model" :class="{ 'is-invalid': $v.form.firstName.$error }">
+				<input type="text" class="form-control" id="firstName" name="firstName" v-model.trim="$v.form.firstName.$model" :class="{ 'is-invalid': $v.form.firstName.$error }">
 				<div class="invalid-feedback fst-italic">
 				Please enter your First Name.
 				</div>
 			</div>
 			<div class="mb-3">
 				<label for="lastName" class="form-label">Last Name</label>
-				<input type="text" class="form-control" id="lastName" v-model.trim="$v.form.lastName.$model" :class="{ 'is-invalid': $v.form.lastName.$error }">
+				<input type="text" class="form-control" id="lastName" name="lastName" v-model.trim="$v.form.lastName.$model" :class="{ 'is-invalid': $v.form.lastName.$error }">
 				<div class="invalid-feedback fst-italic">
 				Please enter your Last Name.
 				</div>
 			</div>
 			<div class="mb-3">
 				<label for="company" class="form-label">Company Name</label>
-				<input type="text" class="form-control" id="company" v-model.trim="$v.form.companyName.$model" :class="{ 'is-invalid': $v.form.companyName.$error }">
+				<input type="text" class="form-control" id="companyName" name="companyName" v-model.trim="$v.form.companyName.$model" :class="{ 'is-invalid': $v.form.companyName.$error }">
 				<div class="invalid-feedback fst-italic">
 				Please enter your Company Name.
 				</div>
 			</div>
 			<div class="mb-3">
-				<label for="businessEmail" class="form-label">Business Email</label>
-				<input type="text" class="form-control" id="businessEmail" v-model.trim="$v.form.businessEmail.$model" :class="{ 'is-invalid': $v.form.businessEmail.$error }">
+				<label for="email" class="form-label">Business Email</label>
+				<input type="text" class="form-control" id="email" name="email" v-model.trim="$v.form.email.$model" :class="{ 'is-invalid': $v.form.email.$error }">
 				<div class="invalid-feedback fst-italic">
 				Please enter your Business Email.
 				</div>
 			</div>
 			<div class="mb-3">
 				<label for="phone" class="form-label">Phone</label>
-				<input type="tel" class="form-control" id="phone" v-model.trim="form.phone" v-mask="'(###) ###-####'">
+				<input type="tel" class="form-control" id="phone" name="phone" v-model.trim="form.phone" v-mask="'(###) ###-####'">
 				<div class="invalid-feedback fst-italic">
 				Please enter your Phone.
 				</div>
 			</div>
 			<div class="mb-3">
 				<label for="whatsOnYourMind" class="form-label">What’s on your mind?</label>
-				<textarea rows="3" class="form-control" id="whatSOnYourMind" v-model.trim="form.whatsOnYourMind"></textarea>
+				<textarea rows="3" class="form-control" id="whatsOnYourMind" name="whatsOnYourMind" v-model.trim="form.whatsOnYourMind"></textarea>
 			</div>
 			<div class="d-flex justify-content-end mb-3 pt-3 border-top">
 				 <button type="submit" class="btn btn-secondary">Get Access Now</button>
@@ -49,8 +51,12 @@
 
 <script>
 	import { required,email } from 'vuelidate/lib/validators';
+	import formAlerts from './formAlerts';
 	export default {
 		name: 'downloadForm',
+		components: {
+			formAlerts
+		},
 		data() {
 			return{
 				submitStatus: null,
@@ -58,7 +64,7 @@
 					'firstName': '',
 					'lastName': '',
 					'companyName': '',
-					'businessEmail': '',
+					'email': '',
 					'phone': '',
 					'whatsOnYourMind': ''
 				},
@@ -75,22 +81,43 @@
 				'companyName': {
 					required
 				},
-				'businessEmail': {
+				'email': {
 					required,
 					email
 				},
 			}
 		},
+		computed: {
+		  formStatus() {
+			return this.submitStatus;
+		  }
+		},
 		methods: {
 			submit() {
-				console.log('submit!')
 				this.$v.$touch()
 				if (this.$v.$invalid) {
-					this.submitStatus = 'ERROR'
+					this.submitStatus = 'error'
 				} else {
-					this.$refs.downloadForm.submit();
+					this.$refs.form.submit();
+					this.submitStatus = 'success';
+					this.reset();
 				}
-			}
+			},
+			reset(){
+				this.$v.$reset();
+				this.form = {
+					'firstName': '',
+					'lastName': '',
+					'companyName': '',
+					'email': '',
+					'phone': '',
+					'whatsOnYourMind': ''
+				};
+				setTimeout(function () {
+					 this.submitStatus = null;
+					 this.$emit('complete');
+				}.bind(this), 8000);
+			},
 		}
 	};
 </script>
