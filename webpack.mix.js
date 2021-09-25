@@ -25,6 +25,6 @@ mix.js([
 
 mix.sass(paths.resource + 'scss/app.scss', paths.public + 'css/site.css')
 	.purgeCss({
-		content: [path.join(__dirname, 'views/*.ejs'),path.join(__dirname, 'views/layouts/*.ejs')],
+		content: [path.join(__dirname, 'views/*.ejs'),path.join(__dirname, 'views/layouts/*.ejs'),path.join(__dirname, 'src/js/components/*.vue')],
 		safelist: { deep: [/hljs/] },
 	});
