@@ -6,7 +6,7 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 });
 // Add back to top button
 import { addBackToTop } from 'vanilla-back-to-top'
-addBackToTop({
+var backToTop = addBackToTop({
     scrollDuration: 200
   });
 // Init (opt-in) Bootstrap css tool-tips
@@ -15,8 +15,9 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 });
 // Init Bootstrap Modal
-var downloadModal = new bootstrap.Modal(document.getElementById('downloadModal'));
-
+if (document.getElementById("downloadModal")) {
+	var downloadModal = new bootstrap.Modal(document.getElementById('downloadModal'));
+}
 // Form components validation/masking
 import Vuelidate from 'vuelidate';
 Vue.use(Vuelidate);

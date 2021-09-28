@@ -8,161 +8,173 @@
   <section class="py-5">
     <div class="container">
       <div class="row">
-        <div class="col-12 col-lg-10 offset-lg-1">
-          <style>
-            #drip-ef-797836066 {
-              font: .875rem/1.5rem sans-serif;
-              width: 100%;
-            }
-
-            #drip-ef-797836066 h3 {
-              font-size: 1.125rem;
-              margin: 0 0 .375rem;
-            }
-
-            #drip-ef-797836066>div {
-              margin-bottom: .75rem;
-            }
-
-            #drip-ef-797836066 fieldset {
-              border: none;
-              margin: 0;
-              padding: 0;
-            }
-
-            #drip-ef-797836066 legend {
-              margin: 0;
-              padding: 0;
-            }
-
-            #drip-ef-797836066 input[type="email"],
-            #drip-ef-797836066 input[type="number"],
-            #drip-ef-797836066 input[type="tel"],
-            #drip-ef-797836066 input[type="text"] {
-              margin: 0;
-              padding: .375rem .5625rem;
-              width: 100%;
-            }
-
-            #drip-ef-797836066 input[type="checkbox"],
-            #drip-ef-797836066 input[type="radio"] {
-              margin: .1875rem .1875rem 0 0;
-              padding: 0;
-            }
-
-            #drip-ef-797836066 input[type="submit"] {
-              margin: 0;
-              padding: .375rem .5625rem;
-            }
-          </style>
-
-          <form action="https://www.getdrip.com/forms/797836066/submissions" method="post" data-drip-embedded-form="797836066" id="drip-ef-797836066">
-            <div data-drip-attribute="description"><strong>Let’s get started! Step 1 starts right now… (&lt; 5 min)</strong><br>
-              &nbsp;</div>
-
-
-            <div>
-              <label for="drip-my-linkedin-headline">My LinkedIn Headline</label><br>
-              <input type="text" id="drip-my-linkedin-headline" name="fields[my_linkedin_headline]" value="">
+        <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" id="step1form">
+          <form class="needs-validation" action="/step-1" method="post" novalidate v-on:submit.prevent="submit()" ref="form">
+            <input type="hidden" name="page" value="Step 1 Page">
+            <form-alerts :status="formStatus"></form-alerts>
+            <h3 class="mb-5"><span class="text-secondary">Let’s get started!</span> Step 1 starts right now… <span class="text-nowrap text-secondary fst-italic fw-light fs-5">(&lt; 5 min)</span>
+            </h3>
+            <div class="mb-3">
+              <label for="myLinkedinHeadline" class="form-label fw-bold">My LinkedIn Headline</label>
+              <input type="text" class="form-control" id="myLinkedinHeadline" name="myLinkedinHeadline" v-model.trim="$v.form.myLinkedinHeadline.$model" :class="{ 'is-invalid': $v.form.myLinkedinHeadline.$error }">
+              <div class="invalid-feedback fst-italic">
+                Please enter your LinkedIn Headline.
+              </div>
             </div>
-
-            <div>
-              <label for="drip-first-name">First Name</label><br>
-              <input type="text" id="drip-first-name" name="fields[first_name]" value="">
+            <div class="mb-3">
+              <label for="firstName" class="form-label fw-bold">First Name</label>
+              <div class="input-group has-validation">
+                <input type="text" class="form-control" id="firstName" name="firstName" v-model.trim="$v.form.firstName.$model" :class="{ 'is-invalid': $v.form.firstName.$error }">
+                <div class="invalid-feedback fst-italic">
+                  Please enter your first name.
+                </div>
+              </div>
             </div>
-
-            <div>
-              <label for="drip-last-name">Last Name</label><br>
-              <input type="text" id="drip-last-name" name="fields[last_name]" value="">
+            <div class="mb-3">
+              <label for="lastName" class="form-label fw-bold">Last Name</label>
+              <input type="text" class="form-control" id="lastName" name="lastName" v-model.trim="$v.form.lastName.$model" :class="{ 'is-invalid': $v.form.lastName.$error }">
+              <div class="invalid-feedback fst-italic">
+                Please enter your Last Name.
+              </div>
             </div>
-
-            <div>
-              <label for="drip-email">Email Address</label><br>
-              <input type="email" id="drip-email" name="fields[email]" value="">
+            <div class="mb-3">
+              <label for="email" class="form-label fw-bold">Company Email</label>
+              <input type="text" class="form-control" name="email" id="email" v-model.trim="$v.form.email.$model" :class="{ 'is-invalid': $v.form.email.$error }">
+              <div class="invalid-feedback fst-italic">
+                Please enter a valid email address.
+              </div>
             </div>
-
-            <div>
-              <label for="drip-mobile">Mobile</label><br>
-              <input type="text" id="drip-mobile" name="fields[mobile]" value="">
+            <div class="mb-3">
+              <label for="phone" class="form-label fw-bold">Phone</label>
+              <input type="tel" class="form-control" id="phone" name="phone" v-model.trim="$v.form.phone.$model" v-mask="'(###) ###-####'" :class="{ 'is-invalid': $v.form.phone.$error }">
+              <div class="invalid-feedback fst-italic">
+                Please provide a phone number for us to contact you Or uncheck the box below.
+              </div>
             </div>
-
-            <div>
-              <label for="drip-city">City</label><br>
-              <input type="text" id="drip-city" name="fields[city]" value="">
+            <div class="mb-3">
+              <label for="city" class="form-label fw-bold">City</label>
+              <input type="text" class="form-control" id="city" name="city" v-model.trim="$v.form.city.$model" :class="{ 'is-invalid': $v.form.city.$error }">
+              <div class="invalid-feedback fst-italic">
+                Please enter your City.
+              </div>
             </div>
-
-            <div>
-              <label for="drip-state-region">State/Region</label><br>
-              <input type="text" id="drip-state-region" name="fields[state_region]" value="">
+            <div class="mb-3">
+              <label for="state" class="form-label fw-bold">State</label>
+              <input type="text" class="form-control" id="state" name="state" v-model.trim="$v.form.state.$model" :class="{ 'is-invalid': $v.form.state.$error }">
+              <div class="invalid-feedback fst-italic">
+                Please enter your State.
+              </div>
             </div>
-
-            <div>
-              <label for="drip-my-linkedin-url">My LinkedIn URL</label><br>
-              <input type="text" id="drip-my-linkedin-url" name="fields[my_linkedin_url]" value="">
+            <div class="mb-3">
+              <label for="myLinkedinUrl" class="form-label fw-bold">My LinkedIn URL</label>
+              <input type="text" class="form-control" id="myLinkedinUrl" name="myLinkedinUrl" v-model.trim="$v.form.myLinkedinUrl.$model" :class="{ 'is-invalid': $v.form.myLinkedinUrl.$error }">
+              <div class="invalid-feedback fst-italic">
+                Please enter your My LinkedIn URL.
+              </div>
             </div>
-
-            <div>
-              <label for="drip-what-are-three-of-your-most-unique-and-significant-strengths-as-you-would-describe-them">What are three of your most unique and significant strengths as you would describe them?</label><br>
-              <input type="text" id="drip-what-are-three-of-your-most-unique-and-significant-strengths-as-you-would-describe-them" name="fields[what_are_three_of_your_most_unique_and_significant_strengths_as_you_would_describe_them]" value="">
+            <div class="mb-3">
+              <label for="threeUniqueStrengths" class="form-label fw-bold">What are three of your most unique and significant strengths as you would describe them?</label>
+              <textarea class="form-control" id="threeUniqueStrengths" name="threeUniqueStrengths" rows="4" maxLength="580" v-model="form.threeUniqueStrengths"></textarea>
             </div>
-
-            <div>
-              <label for="drip-why-do-you-want-to-work-with-us-and-why-do-you-think-youd-be-a-valuable-addition">Why do you want to work with us and why do you think you’d be a valuable addition?</label><br>
-              <input type="text" id="drip-why-do-you-want-to-work-with-us-and-why-do-you-think-youd-be-a-valuable-addition" name="fields[why_do_you_want_to_work_with_us_and_why_do_you_think_youd_be_a_valuable_addition]" value="">
+            <div class="mb-3">
+              <label for="valuableAddition" class="form-label fw-bold">Why do you want to work with us and why do you think you’d be a valuable addition?</label>
+              <textarea class="form-control" id="valuableAddition" name="valuableAddition" rows="4" maxLength="580" v-model="form.valuableAddition"></textarea>
             </div>
-
-            <div>
-              <fieldset>
-                <legend>Which of these skills do you consider your superpowers? Check any/all that apply.</legend>
-                <input type="radio" id="21327" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Project Management">
-                <label for="21327">Project Management</label><br>
-                <input type="radio" id="21328" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Client Communications &amp; Interaction">
-                <label for="21328">Client Communications &amp; Interaction</label><br>
-                <input type="radio" id="21329" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Personal Development / Growth">
-                <label for="21329">Personal Development / Growth</label><br>
-                <input type="radio" id="21330" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Visual Communication">
-                <label for="21330">Visual Communication</label><br>
-                <input type="radio" id="21331" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Written Communication">
-                <label for="21331">Written Communication</label><br>
-                <input type="radio" id="21332" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="FPGA Systems Architecture">
-                <label for="21332">FPGA Systems Architecture</label><br>
-                <input type="radio" id="21333" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="FPGA Design">
-                <label for="21333">FPGA Design</label><br>
-                <input type="radio" id="21334" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="FPGA Verification">
-                <label for="21334">FPGA Verification</label><br>
-                <input type="radio" id="21335" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="FPGA Build Process">
-                <label for="21335">FPGA Build Process</label><br>
-                <input type="radio" id="21336" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="FPGA Timing Analysis and Resolution">
-                <label for="21336">FPGA Timing Analysis and Resolution</label><br>
-                <input type="radio" id="21337" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Software Development">
-                <label for="21337">Software Development</label><br>
-                <input type="radio" id="21338" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Firmware Development">
-                <label for="21338">Firmware Development</label><br>
-                <input type="radio" id="21339" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Big Picture / Strategy">
-                <label for="21339">Big Picture / Strategy</label><br>
-                <input type="radio" id="21340" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Planning">
-                <label for="21340">Planning</label><br>
-                <input type="radio" id="21341" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Copywriting">
-                <label for="21341">Copywriting</label><br>
-                <input type="radio" id="21342" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Technical Writing">
-                <label for="21342">Technical Writing</label><br>
-                <input type="radio" id="21343" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Clear explanations of complex topics">
-                <label for="21343">Clear explanations of complex topics</label><br>
-                <input type="radio" id="21344" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Marketing Team Leadership">
-                <label for="21344">Marketing Team Leadership</label><br>
-                <input type="radio" id="21345" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Technical Team Leadership">
-                <label for="21345">Technical Team Leadership</label><br>
-                <input type="radio" id="21346" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Graphic Design">
-                <label for="21346">Graphic Design</label><br>
-                <input type="radio" id="21347" name="fields[which_of_these_skills_do_you_consider_your_superpowers]" value="Effective Delegation">
-                <label for="21347">Effective Delegation</label><br>
-              </fieldset>
+            <div class="mb-3">
+              <label for="yourSuperpowers" class="form-label fw-bold" :class="{ 'is-invalid': $v.form.myLinkedinUrl.$error }">Which of these skills do you consider your superpowers? Check any/all that apply.</label>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="projectManagement" value="project management" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="projectManagement" class="form-check-label">Project Management</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="clientCommunicationsInteraction" value="client communications interaction" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="clientCommunicationsInteraction" class="form-check-label">Client Communications &amp; Interaction</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="personalDevelopmentGrowth" value="personal development growth" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="personalDevelopmentGrowth" class="form-check-label">Personal Development / Growth</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="visualCommunication" value="visual communication" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="visualCommunication" class="form-check-label">Visual Communication</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="writtenCommunication" value="written communication" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="writtenCommunication" class="form-check-label">Written Communication</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="visualCommunication" value="visual communication" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="visualCommunication" class="form-check-label">Visual Communication</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="fpgaSystemsArchitecture" value="fpga systems architecture" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="fpgaSystemsArchitecture" class="form-check-label">FPGA Systems Architecture</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="fpgaDesign" value="fpga design" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="fpgaDesign" class="form-check-label">FPGA Design</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="fpgaVerification" value="fpga verification" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="fpgaVerification" class="form-check-label">FPGA Verification</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="fpgaBuildProcess" value="fpga build process" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="fpgaBuildProcess" class="form-check-label">FPGA Build Process</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="fpgaTimingAnalysisAndResolution" value="fpgaTimingAnalysisAndResolution" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="fpgaTimingAnalysisAndResolution" class="form-check-label">FPGA Timing Analysis and Resolution</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="softwareDevelopment" value="software development" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="softwareDevelopment" class="form-check-label">Software Development</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="firmwareDevelopment" value="firmware development" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="firmwareDevelopment" class="form-check-label">Firmware Development</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="bigPictureStrategy" value="big picture strategy" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="bigPictureStrategy" class="form-check-label">Big Picture / Strategy</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="planning" value="planning" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="planning" class="form-check-label">Planning</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="copywriting" value="copywriting" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="copywriting" class="form-check-label">Copywriting</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="technicalWriting" value="technical writing" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="technicalWriting" class="form-check-label">Technical Writing</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="clearExplanationsOfComplexTopics" value="clear explanations of complex topics" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="clearExplanationsOfComplexTopics" class="form-check-label">Clear explanations of complex topics</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="marketingTeamLeadership" value="marketing team leadership" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="marketingTeamLeadership" class="form-check-label">Marketing Team Leadership</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="technicalTeamLeadership" value="technical team leadership" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="technicalTeamLeadership" class="form-check-label">Technical Team Leadership</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="graphicDesign" value="graphic design" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="graphicDesign" class="form-check-label">Graphic Design</label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="effectiveDelegation" value="effective delegation" v-model.trim="$v.form.yourSuperpowers.$model">
+                <label for="effectiveDelegation" class="form-check-label">Effective Delegation</label>
+              </div>
             </div>
-
-            <div>
-              <label for="drip-where-did-you-learn-about-this-opportunity">Where did you learn about this opportunity?</label><br>
-              <select name="fields[where_did_you_learn_about_this_opportunity]">
-                <option disabled="" selected="" value="">Select an option</option>
+            <div class="mb-3">
+              <label for="whereDidYouLearnAboutThisOpportunity" class="form-label fw-bold">Where did you learn about this opportunity</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Select One</option>
                 <option value="Friend / Colleague">Friend / Colleague</option>
                 <option value="Search">Search</option>
                 <option value="Social Media">Social Media</option>
@@ -170,20 +182,15 @@
                 <option value="A-Team Member">A-Team Member</option>
                 <option value="Other">Other</option>
               </select>
+              <div class="invalid-feedback fst-italic">
+                Please tell us where you learned about this opportunity.
+              </div>
             </div>
-
-
-            <div style="display: none;" aria-hidden="true">
-              <label for="website">Website</label><br>
-              <input type="text" id="website" name="website" tabindex="-1" autocomplete="false" value="">
-            </div>
-
-            <div>
-              <input type="submit" value="Continue" data-drip-attribute="sign-up-button">
+            <div class="col-12">
+              <hr class="my-5">
+              <button class="btn btn-secondary" type="submit" onClick>Submit and Continue</button>
             </div>
           </form>
-
-
         </div>
       </div>
     </div>
