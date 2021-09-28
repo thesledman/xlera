@@ -10,8 +10,8 @@
           <p>Please use the form below to contact us. We do our best to respond within two business days, but it may take longer based on the volume of correspondence we recieve.</p>
           <hr class="bg-secondary">
           <form class="needs-validation" action="/contact-us" method="post" novalidate id="contactForm" v-on:submit.prevent="submit()" ref="form">
-            <input type="hidden" name="page" value="Contact Us Page">
-            <form-alerts :status="formStatus"></form-alerts>
+            <input type="hidden" name="page" id="page" value="Contact Us Page">
+            <form-alerts :status="formStatus" :scroll="true"></form-alerts>
             <div class="mb-3">
               <label for="firstName" class="form-label">First Name</label>
               <div class="input-group has-validation">

@@ -2,8 +2,11 @@ var axios = require('axios').default; // AJAX handler
 
 const form_post = (req,res) => {
 	var form_data = format_data(req.body);
-	if(send_message(form_data)){
-		res.sendStatus(200); 
+	var sent = send_message(form_data);
+	if(sent){
+		res.sendStatus(sent,200); 
+	} else {
+		res.sendStatus(200);
 	}
 }
 
@@ -16,15 +19,15 @@ const format_data = (data) => {
 			"phone": data.phone,
 			"fieldValues":[
 				{
-					"field":"1",
+					"field":"23",
 					"value":data.companyName
 				},
 				{
-					"field":"7",
+					"field":"25",
 					"value":data.whatsOnYourMind
 				},
 				{
-					"field":"9",
+					"field":"21",
 					"value":data.page
 				},
 			]
@@ -48,6 +51,7 @@ const send_message = (form_data) => {
 	  })
 	  .catch(function (error) {
 		console.log(error.response.data,error);
+		return true;
 	  });
 }
 

@@ -10,8 +10,9 @@
       <div class="row">
         <div class="col-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2" id="step1form">
           <form class="needs-validation" action="/step-1" method="post" novalidate v-on:submit.prevent="submit()" ref="form">
-            <input type="hidden" name="page" value="Step 1 Page">
-            <form-alerts :status="formStatus"></form-alerts>
+            <input type="hidden" name="page" id="page" value="Step 1 form">
+            <input type="hidden" name="opportunity" id="opportunity" value="<%= opportunity.name %>">
+            <form-alerts :status="formStatus" :scroll="true" id="formAlert"></form-alerts>
             <h3 class="mb-5"><span class="text-secondary">Let’s get started!</span> Step 1 starts right now… <span class="text-nowrap text-secondary fst-italic fw-light fs-5">(&lt; 5 min)</span>
             </h3>
             <div class="mb-3">
@@ -173,7 +174,7 @@
             </div>
             <div class="mb-3">
               <label for="whereDidYouLearnAboutThisOpportunity" class="form-label fw-bold">Where did you learn about this opportunity</label>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" aria-label="Default select example" v-model.trim="form.whereDidYouLearnAboutThisOpportunity">
                 <option selected>Select One</option>
                 <option value="Friend / Colleague">Friend / Colleague</option>
                 <option value="Search">Search</option>

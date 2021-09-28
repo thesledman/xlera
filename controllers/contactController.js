@@ -1,10 +1,13 @@
 var axios = require('axios').default; // AJAX handler 
 
 const form_post = (req,res) => {
-	//res.json(req);
 	var form_data = format_data(req.body);
-	if(send_message(form_data)){
-		res.sendStatus(200); 
+	//console.log(form_data);
+	var sent = send_message(form_data);
+	if(sent){
+		res.sendStatus(sent,200); 
+	} else {
+		res.sendStatus(200);
 	}
 }
 
@@ -20,24 +23,20 @@ const format_data = (data) => {
 			"phone": data.phone,
 			"fieldValues":[
 				{
-					"field":"1",
-					"value":data.companyName
-				},
-				{
-					"field":"7",
-					"value":data.whatsOnYourMind
-				},
-				{
 					"field":"8",
 					"value":data.preferPhone
 				},
 				{
-					"field":"9",
+					"field":"21",
 					"value":data.page
 				},
 				{
-					"field":"10",
-					"value":data.tellUsALittleAboutYourInterest
+					"field":"23",
+					"value":data.companyName
+				},
+				{
+					"field":"25",
+					"value":data.whatsOnYourMind
 				}
 			]
 		}

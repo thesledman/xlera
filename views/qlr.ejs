@@ -34,7 +34,7 @@
         <div class="col-lg-6">
           <p class="fs-1 text-center fw-bolder text-shadow-xs">Get started now!</p>
           <form class="needs-validation" action="/qlr" method="post" novalidate id="qlrForm" v-on:submit.prevent="submit()" ref="form">
-            <input type="hidden" name="page" value="QLR Program Page">
+            <input type="hidden" name="page" id="page" value="QLR Program Page">
             <form-alerts :status="formStatus"></form-alerts>
             <div class="mb-3">
               <label for="firstName" class="form-label">First Name</label>

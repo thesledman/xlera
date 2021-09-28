@@ -11,9 +11,6 @@ const form_post = (req,res) => {
 }
 
 const format_data = (data) => {
-	if(data.preferPhone === true){
-		data.preferPhone = 'yes';
-	}
 	return {
 		"contact": {
 			"email": data.email,
@@ -22,21 +19,52 @@ const format_data = (data) => {
 			"phone": data.phone,
 			"fieldValues":[
 				{
-					"field":"8",
-					"value":data.preferPhone
-				},
-				{
 					"field":"21",
 					"value":data.page
 				},
 				{
-					"field":"10",
-					"value":data.tellUsALittleAboutYourInterest
+					"field":"11",
+					"value":data.city
+				},
+				{
+					"field":"12",
+					"value":data.state
+				},
+				{
+					"field":"13",
+					"value":data.myLinkedinHeadline
+				},
+				{
+					"field":"14",
+					"value":data.myLinkedinUrl
+				},
+				{
+					"field":"15",
+					"value":data.threeUniqueStrengths
+				},
+				{
+					"field":"16",
+					"value":data.valuableAddition
+				},
+				{
+					"field":"17",
+					"value":data.yourSuperpowers
+				},
+				{
+					"field":"19",
+					"value":data.whereDidYouLearnAboutThisOpportunity
+				},
+				{
+					"field":"22",
+					"value":data.opportunity
+				},
+				{
+					"field":"20",
+					"value":"this should be grouped"
 				}
 			]
 		}
 	}
-
 }
 
 const send_message = (form_data) => {
@@ -55,6 +83,7 @@ const send_message = (form_data) => {
 	  })
 	  .catch(function (error) {
 		console.log(error.response.data,error);
+		return error;
 	  });
 }
 

@@ -29,7 +29,7 @@ if (document.getElementById("contactForm")) {
 		},
 		data() {
 			return{
-				submitStatus: null,
+				submitStatus: false,
 				form: {
 					'firstName': '',
 					'lastName': '',
@@ -37,9 +37,13 @@ if (document.getElementById("contactForm")) {
 					'email': '',
 					'phone': '',
 					'preferPhone': false,
-					'whatsOnYourMind': ''
+					'whatsOnYourMind': '',
+					'page':''
 				},
 			}
+		},
+		mounted() {
+			this.form.page = document.getElementById('page').value;
 		},
 		validations: {
 			form: {
@@ -62,6 +66,8 @@ if (document.getElementById("contactForm")) {
 					  })
 				},
 				'preferPhone': {},
+				'whatsOnYourMind': {},
+				'page': {}
 			}
 		},
 		computed: {
@@ -71,14 +77,21 @@ if (document.getElementById("contactForm")) {
 		},
 		methods: {
 			submit() {
-				var self = this;
 				this.$v.$touch()
 				if (this.$v.$invalid) {
-					this.submitStatus = 'error'
+					this.submitStatus = 'error';
 				} else {
-					this.$refs.form.submit();
-					this.submitStatus = 'success';
-					this.reset();
+					var self = this;
+					axios.post('/contact-us', this.form)
+					  .then(function (response) {
+						console.log(response);
+						self.submitStatus = 'success';
+						self.reset();
+					  })
+					  .catch(function (error) {
+						self.submitStatus = 'error';
+						console.log(error);
+					  });
 				}
 			},
 			reset(){
@@ -92,7 +105,6 @@ if (document.getElementById("contactForm")) {
 					'preferPhone': false,
 					'whatsOnYourMind': ''
 				};
-				setTimeout(function () { this.submitStatus = null; }.bind(this), 8000);
 			}
 		}
 	});
@@ -106,8 +118,9 @@ if (document.getElementById("qlrForm")) {
 		},
 		data() {
 			return{
-				submitStatus: null,
+				submitStatus: false,
 				form: {
+					'page': '',
 					'firstName': '',
 					'lastName': '',
 					'email': '',
@@ -116,6 +129,9 @@ if (document.getElementById("qlrForm")) {
 					'tellUsALittleAboutYourInterest': ''
 				},
 			}
+		},
+		mounted() {
+			this.form.page = document.getElementById('page').value;
 		},
 		validations: {
 			form: {
@@ -135,6 +151,7 @@ if (document.getElementById("qlrForm")) {
 					  })
 				},
 				'preferPhone': {},
+				'tellUsALittleAboutYourInterest':{}
 			}
 		},
 		computed: {
@@ -146,11 +163,19 @@ if (document.getElementById("qlrForm")) {
 			submit() {
 				this.$v.$touch()
 				if (this.$v.$invalid) {
-					this.submitStatus = 'error'
+					this.submitStatus = 'error';
 				} else {
-					this.$refs.form.submit();
-					this.submitStatus = 'success';
-					this.reset();
+					var self = this;
+					axios.post('/qlr', this.form)
+					  .then(function (response) {
+						console.log(response);
+						self.submitStatus = 'success';
+						self.reset();
+					  })
+					  .catch(function (error) {
+						self.submitStatus = 'error';
+						console.log(error);
+					  });
 				}
 			},
 			reset(){
@@ -163,7 +188,6 @@ if (document.getElementById("qlrForm")) {
 					'preferPhone': false,
 					'tellUsALittleAboutYourInterest': ''
 				};
-				setTimeout(function () { this.submitStatus = null; }.bind(this), 8000);
 			}
 		}
 	});
@@ -177,8 +201,10 @@ if (document.getElementById("step1form")) {
 		},
 		data() {
 			return{
-				submitStatus: null,
+				submitStatus: false,
 				form: {
+					'page':'',
+					'opportunity': '',
 					'myLinkedinHeadline': '',
 					'firstName': '',
 					'lastName': '',
@@ -194,9 +220,12 @@ if (document.getElementById("step1form")) {
 				},
 			}
 		},
+		mounted() {
+			this.form.page = document.getElementById('page').value;
+			this.form.opportunity = document.getElementById('opportunity').value;
+		},
 		validations: {
 			form: {
-				'myLinkedinHeadline': {},
 				'firstName': {
 					required
 				},
@@ -212,6 +241,7 @@ if (document.getElementById("step1form")) {
 				},
 				'city': {},
 				'state': {},
+				'myLinkedinHeadline': {},
 				'myLinkedinUrl':{},
 				'threeUniqueStrengths':{},
 				'valuableAddition':{},
@@ -228,14 +258,20 @@ if (document.getElementById("step1form")) {
 			submit() {
 				this.$v.$touch()
 				if (this.$v.$invalid) {
-					this.submitStatus = 'error'
-					if(document.getElementById('back-to-top')){
-						document.getElementById('back-to-top').click();
-					}
+					this.submitStatus = 'error';
 				} else {
-					this.$refs.form.submit();
-					this.submitStatus = 'success';
-					this.reset();
+					var self = this;
+					this.form.yourSuperpowers = this.form.yourSuperpowers.join(", ");
+					axios.post('/step-1', this.form)
+					  .then(function (response) {
+						console.log(response);
+						window.location.href = '/step-2';
+						self.reset();
+					  })
+					  .catch(function (error) {
+						self.submitStatus = 'error';
+						console.log(error);
+					  });
 				}
 			},
 			reset(){
@@ -245,8 +281,14 @@ if (document.getElementById("step1form")) {
 					'lastName': '',
 					'email': '',
 					'phone': '',
+					'city': '',
+					'state': '',
+					'myLinkedinUrl':'',
+					'threeUniqueStrengths':'',
+					'valuableAddition':'',
+					'yourSuperpowers': '',
+					'whereDidYouLearnAboutThisOpportunity':''
 				};
-				setTimeout(function () { this.submitStatus = null; }.bind(this), 8000);
 			}
 		}
 	});

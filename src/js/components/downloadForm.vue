@@ -2,7 +2,6 @@
 	<div>
 		<form-alerts :status="formStatus"></form-alerts>
 		<form action="/download-form" @submit.prevent="submit" method="post" ref="form">
-		<input type="hidden" name="page" value="Download Report Modal">
 			<div class="mb-3">
 				<label for="firstName" class="form-label">First Name</label>
 				<input type="text" class="form-control" id="firstName" name="firstName" v-model.trim="$v.form.firstName.$model" :class="{ 'is-invalid': $v.form.firstName.$error }">
@@ -61,6 +60,7 @@
 			return{
 				submitStatus: null,
 				form: {
+					'page': 'Download Report Modal',
 					'firstName': '',
 					'lastName': '',
 					'companyName': '',
@@ -96,11 +96,19 @@
 			submit() {
 				this.$v.$touch()
 				if (this.$v.$invalid) {
-					this.submitStatus = 'error'
+					this.submitStatus = 'error';
 				} else {
-					this.$refs.form.submit();
-					this.submitStatus = 'success';
-					this.reset();
+					var self = this;
+					axios.post('/contact-us', this.form)
+					  .then(function (response) {
+						console.log(response);
+						self.submitStatus = 'success';
+						self.reset();
+					  })
+					  .catch(function (error) {
+						self.submitStatus = 'error';
+						console.log(error);
+					  });
 				}
 			},
 			reset(){
@@ -114,9 +122,9 @@
 					'whatsOnYourMind': ''
 				};
 				setTimeout(function () {
-					 this.submitStatus = null;
+					 this.submitStatus = false;
 					 this.$emit('complete');
-				}.bind(this), 8000);
+				}.bind(this), 5000);
 			},
 		}
 	};

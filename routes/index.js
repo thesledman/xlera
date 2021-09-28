@@ -4,7 +4,7 @@ var router = express.Router();
 var contactController = require('../controllers/contactController');
 var qlrController = require('../controllers/qlrController');
 var reportController = require('../controllers/reportController');
-
+var stepController = require('../controllers/stepController');
 // Routes
 // GET | home page.
 router.get('/', function(req, res, next) {
@@ -30,11 +30,14 @@ router.get('/qlr', function(req, res, next) {
 	res.render('qlr', { title: 'Xlera Solutions - Qualified Leads Registration (QLR)' });
 });
 // Dynamic Pages
-router.get('/apply', function(req, res, next) {
-	res.render('apply', { title: 'Xlera Solutions - Apply Now' });
-});
-router.get('/step-1', function(req, res, next) {
-	res.render('step-1', { title: 'Xlera Solutions - Step 1' });
+router.get('/step-1/:opportunityId', function(req, res, next) {
+	var locals = {
+		title: 'Xlera Solutions - Step 1',
+		opportunity: {
+			name: req.params.opportunityId
+		}
+	};
+	res.render('step-1', locals);
 });
 router.get('/step-2', function(req, res, next) {
 	res.render('step-2', { title: 'Xlera Solutions - Step 2' });
@@ -48,8 +51,18 @@ router.get('/opportunity/:opportunityId', function(req, res, next) {
 	};
 	res.render('opportunity', locals);
 });
+router.get('/apply/:opportunityId', function(req, res, next) {
+	var locals = {
+		title: 'Xlera Solutions - Apply Now',
+		opportunity: {
+			name: req.params.opportunityId
+		}
+	};
+	res.render('apply', locals);
+});
 // Post | Pages
 router.post('/contact-us', contactController.form_post);
 router.post('/qlr',qlrController.form_post);
 router.post('/download-form',reportController.form_post);
+router.post('/step-1',stepController.form_post);
 module.exports = router;
