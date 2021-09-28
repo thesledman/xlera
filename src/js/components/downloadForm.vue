@@ -99,7 +99,7 @@
 					this.submitStatus = 'error';
 				} else {
 					var self = this;
-					axios.post('/contact-us', this.form)
+					axios.post('/download-form', this.form)
 					  .then(function (response) {
 						console.log(response);
 						self.submitStatus = 'success';
