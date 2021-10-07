@@ -1,6 +1,6 @@
 <div class="ateam-hero d-flex justify-content-center align-items-center">
   <div class="text-shadow">
-    <h1 class="display-4 fw-bolder text-white mb-3">HELLO AND <span class="text-secondary-lighter">WELCOME!</span>
+    <h1 class="display-4 fw-bolder text-white mb-3">Let’s Get <span class="text-secondary-lighter">Started!</span>
     </h1>
   </div>
 </div>
@@ -13,7 +13,7 @@
             <input type="hidden" name="page" id="page" value="Step 1 form">
             <input type="hidden" name="opportunity" id="opportunity" value="<%= opportunity.name %>">
             <form-alerts :status="formStatus" :scroll="true" id="formAlert"></form-alerts>
-            <h3 class="mb-5"><span class="text-secondary">Let’s get started!</span> Step 1 starts right now… <span class="text-nowrap text-secondary fst-italic fw-light fs-5">(&lt; 5 min)</span>
+            <h3 class="mb-5">Step 1 starts right now… <span class="text-nowrap text-secondary fst-italic fw-light fs-5">(&lt; 5 min)</span>
             </h3>
             <div class="mb-3">
               <label for="myLinkedinHeadline" class="form-label fw-bold">My LinkedIn Headline</label>
@@ -75,107 +75,116 @@
             </div>
             <div class="mb-3">
               <label for="threeUniqueStrengths" class="form-label fw-bold">What are three of your most unique and significant strengths as you would describe them?</label>
-              <textarea class="form-control" id="threeUniqueStrengths" name="threeUniqueStrengths" rows="4" maxLength="580" v-model="form.threeUniqueStrengths"></textarea>
+              <textarea class="form-control" id="threeUniqueStrengths" name="threeUniqueStrengths" rows="4" maxLength="580" v-model="form.threeUniqueStrengths" :class="{ 'is-invalid': $v.form.threeUniqueStrengths.$error }"></textarea>
+              <div class="invalid-feedback fst-italic">
+                Please list three of your most unique and significant strengths.
+              </div>
             </div>
             <div class="mb-3">
               <label for="valuableAddition" class="form-label fw-bold">Why do you want to work with us and why do you think you’d be a valuable addition?</label>
-              <textarea class="form-control" id="valuableAddition" name="valuableAddition" rows="4" maxLength="580" v-model="form.valuableAddition"></textarea>
+              <textarea class="form-control" id="valuableAddition" name="valuableAddition" rows="4" maxLength="580" v-model="form.valuableAddition" :class="{ 'is-invalid': $v.form.valuableAddition.$error }"></textarea>
+              <div class="invalid-feedback fst-italic">
+                Please let us know why you would like to work with us.
+              </div>
             </div>
             <div class="mb-3">
-              <label for="yourSuperpowers" class="form-label fw-bold" :class="{ 'is-invalid': $v.form.myLinkedinUrl.$error }">Which of these skills do you consider your superpowers? Check any/all that apply.</label>
+              <label for="yourSuperpowers" class="form-label fw-bold" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Which of these skills do you consider your superpowers? Check any/all that apply.</label>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="projectManagement" value="project management" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="projectManagement" class="form-check-label">Project Management</label>
+                <input type="checkbox" class="form-check-input" id="projectManagement" value="project management" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="projectManagement" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Project Management</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="clientCommunicationsInteraction" value="client communications interaction" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="clientCommunicationsInteraction" class="form-check-label">Client Communications &amp; Interaction</label>
+                <input type="checkbox" class="form-check-input" id="clientCommunicationsInteraction" value="client communications interaction" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="clientCommunicationsInteraction" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Client Communications &amp; Interaction</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="personalDevelopmentGrowth" value="personal development growth" v-model.trim="$v.form.yourSuperpowers.$model">
+                <input type="checkbox" class="form-check-input" id="personalDevelopmentGrowth" value="personal development growth" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
                 <label for="personalDevelopmentGrowth" class="form-check-label">Personal Development / Growth</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="visualCommunication" value="visual communication" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="visualCommunication" class="form-check-label">Visual Communication</label>
+                <input type="checkbox" class="form-check-input" id="visualCommunication" value="visual communication" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="visualCommunication" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Visual Communication</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="writtenCommunication" value="written communication" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="writtenCommunication" class="form-check-label">Written Communication</label>
+                <input type="checkbox" class="form-check-input" id="writtenCommunication" value="written communication" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="writtenCommunication" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Written Communication</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="visualCommunication" value="visual communication" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="visualCommunication" class="form-check-label">Visual Communication</label>
+                <input type="checkbox" class="form-check-input" id="visualCommunication" value="visual communication" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="visualCommunication" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Visual Communication</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="fpgaSystemsArchitecture" value="fpga systems architecture" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="fpgaSystemsArchitecture" class="form-check-label">FPGA Systems Architecture</label>
+                <input type="checkbox" class="form-check-input" id="fpgaSystemsArchitecture" value="fpga systems architecture" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="fpgaSystemsArchitecture" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">FPGA Systems Architecture</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="fpgaDesign" value="fpga design" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="fpgaDesign" class="form-check-label">FPGA Design</label>
+                <input type="checkbox" class="form-check-input" id="fpgaDesign" value="fpga design" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="fpgaDesign" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">FPGA Design</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="fpgaVerification" value="fpga verification" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="fpgaVerification" class="form-check-label">FPGA Verification</label>
+                <input type="checkbox" class="form-check-input" id="fpgaVerification" value="fpga verification" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="fpgaVerification" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">FPGA Verification</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="fpgaBuildProcess" value="fpga build process" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="fpgaBuildProcess" class="form-check-label">FPGA Build Process</label>
+                <input type="checkbox" class="form-check-input" id="fpgaBuildProcess" value="fpga build process" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="fpgaBuildProcess" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">FPGA Build Process</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="fpgaTimingAnalysisAndResolution" value="fpgaTimingAnalysisAndResolution" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="fpgaTimingAnalysisAndResolution" class="form-check-label">FPGA Timing Analysis and Resolution</label>
+                <input type="checkbox" class="form-check-input" id="fpgaTimingAnalysisAndResolution" value="fpgaTimingAnalysisAndResolution" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="fpgaTimingAnalysisAndResolution" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">FPGA Timing Analysis and Resolution</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="softwareDevelopment" value="software development" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="softwareDevelopment" class="form-check-label">Software Development</label>
+                <input type="checkbox" class="form-check-input" id="softwareDevelopment" value="software development" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="softwareDevelopment" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Software Development</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="firmwareDevelopment" value="firmware development" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="firmwareDevelopment" class="form-check-label">Firmware Development</label>
+                <input type="checkbox" class="form-check-input" id="firmwareDevelopment" value="firmware development" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="firmwareDevelopment" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Firmware Development</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="bigPictureStrategy" value="big picture strategy" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="bigPictureStrategy" class="form-check-label">Big Picture / Strategy</label>
+                <input type="checkbox" class="form-check-input" id="bigPictureStrategy" value="big picture strategy" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="bigPictureStrategy" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Big Picture / Strategy</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="planning" value="planning" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="planning" class="form-check-label">Planning</label>
+                <input type="checkbox" class="form-check-input" id="planning" value="planning" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="planning" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Planning</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="copywriting" value="copywriting" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="copywriting" class="form-check-label">Copywriting</label>
+                <input type="checkbox" class="form-check-input" id="copywriting" value="copywriting" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="copywriting" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Copywriting</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="technicalWriting" value="technical writing" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="technicalWriting" class="form-check-label">Technical Writing</label>
+                <input type="checkbox" class="form-check-input" id="technicalWriting" value="technical writing" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="technicalWriting" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Technical Writing</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="clearExplanationsOfComplexTopics" value="clear explanations of complex topics" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="clearExplanationsOfComplexTopics" class="form-check-label">Clear explanations of complex topics</label>
+                <input type="checkbox" class="form-check-input" id="clearExplanationsOfComplexTopics" value="clear explanations of complex topics" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="clearExplanationsOfComplexTopics" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Clear explanations of complex topics</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="marketingTeamLeadership" value="marketing team leadership" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="marketingTeamLeadership" class="form-check-label">Marketing Team Leadership</label>
+                <input type="checkbox" class="form-check-input" id="marketingTeamLeadership" value="marketing team leadership" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="marketingTeamLeadership" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Marketing Team Leadership</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="technicalTeamLeadership" value="technical team leadership" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="technicalTeamLeadership" class="form-check-label">Technical Team Leadership</label>
+                <input type="checkbox" class="form-check-input" id="technicalTeamLeadership" value="technical team leadership" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="technicalTeamLeadership" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Technical Team Leadership</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="graphicDesign" value="graphic design" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="graphicDesign" class="form-check-label">Graphic Design</label>
+                <input type="checkbox" class="form-check-input" id="graphicDesign" value="graphic design" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="graphicDesign" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Graphic Design</label>
               </div>
               <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="effectiveDelegation" value="effective delegation" v-model.trim="$v.form.yourSuperpowers.$model">
-                <label for="effectiveDelegation" class="form-check-label">Effective Delegation</label>
+                <input type="checkbox" class="form-check-input" id="effectiveDelegation" value="effective delegation" v-model.trim="$v.form.yourSuperpowers.$model" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">
+                <label for="effectiveDelegation" class="form-check-label" :class="{ 'is-invalid': $v.form.yourSuperpowers.$error }">Effective Delegation</label>
+              </div>
+              <div class="invalid-feedback fst-italic">
+                Please select at least 1 of your superpowers.
               </div>
             </div>
             <div class="mb-3">
               <label for="whereDidYouLearnAboutThisOpportunity" class="form-label fw-bold">Where did you learn about this opportunity</label>
               <select class="form-select" aria-label="Default select example" v-model.trim="form.whereDidYouLearnAboutThisOpportunity">
-                <option selected>Select One</option>
+                <option disabled selected value="">Select One</option>
                 <option value="Friend / Colleague">Friend / Colleague</option>
                 <option value="Search">Search</option>
                 <option value="Social Media">Social Media</option>

@@ -1,8 +1,9 @@
-var axios = require('axios').default; // AJAX handler 
+var api_post = require('../helpers/api_post');
 
 const form_post = (req,res) => {
 	var form_data = format_data(req.body);
-	var sent = send_message(form_data);
+	//console.log(form_data);
+	var sent = api_post.send_message(form_data);
 	if(sent){
 		res.sendStatus(sent,200); 
 	} else {
@@ -65,26 +66,6 @@ const format_data = (data) => {
 			]
 		}
 	}
-}
-
-const send_message = (form_data) => {
-//process.env.API_URL
-	var config = {
-		url: 'https://xlerasolutions.api-us1.com/api/3/contacts',
-		method: 'post',
-		headers: {'Api-Token':process.env.API_KEY},
-		data: form_data
-	}
-
-	axios(config)
-	.then(function (response) {
-		console.log(response);
-		return true;
-	  })
-	  .catch(function (error) {
-		console.log(error.response.data,error);
-		return error;
-	  });
 }
 
 module.exports = {

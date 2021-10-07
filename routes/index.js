@@ -10,7 +10,7 @@ var stepController = require('../controllers/stepController');
 router.get('/', function(req, res, next) {
 	res.render('index', { title: 'Xlera Solutions - Home Page' });
 });
-// GET | Static Pages
+// GET | Static Routes
 router.get('/about', function(req, res, next) {
 	res.render('about', { title: 'Xlera Solutions - About Us' });
 });
@@ -29,7 +29,10 @@ router.get('/privacy', function(req, res, next) {
 router.get('/qlr', function(req, res, next) {
 	res.render('qlr', { title: 'Xlera Solutions - Qualified Leads Registration (QLR)' });
 });
-// Dynamic Pages
+router.get('/step-2', function(req, res, next) {
+	res.render('step-2', { title: 'Xlera Solutions - Step 2' });
+});
+// Dynamic Routes
 router.get('/step-1/:opportunityId', function(req, res, next) {
 	var locals = {
 		title: 'Xlera Solutions - Step 1',
@@ -38,9 +41,6 @@ router.get('/step-1/:opportunityId', function(req, res, next) {
 		}
 	};
 	res.render('step-1', locals);
-});
-router.get('/step-2', function(req, res, next) {
-	res.render('step-2', { title: 'Xlera Solutions - Step 2' });
 });
 router.get('/opportunity/:opportunityId', function(req, res, next) {
 	var locals = {
@@ -60,7 +60,7 @@ router.get('/apply/:opportunityId', function(req, res, next) {
 	};
 	res.render('apply', locals);
 });
-// Post | Pages
+// Post Routes
 router.post('/contact-us', contactController.form_post);
 router.post('/qlr',qlrController.form_post);
 router.post('/download-form',reportController.form_post);

@@ -239,14 +239,30 @@ if (document.getElementById("step1form")) {
 				'phone': {
 					required
 				},
-				'city': {},
-				'state': {},
-				'myLinkedinHeadline': {},
-				'myLinkedinUrl':{},
-				'threeUniqueStrengths':{},
-				'valuableAddition':{},
-				'yourSuperpowers': {},
-				'whereDidYouLearnAboutThisOpportunity':{}
+				'city': {
+					required
+				},
+				'state': {
+					required
+				},
+				'myLinkedinHeadline': {
+					required
+				},
+				'myLinkedinUrl':{
+					required
+				},
+				'threeUniqueStrengths':{
+					required
+				},
+				'valuableAddition':{
+					required
+				},
+				'yourSuperpowers': {
+					required
+				},
+				'whereDidYouLearnAboutThisOpportunity':{
+					required
+				},
 			}
 		},
 		computed: {
