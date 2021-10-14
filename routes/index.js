@@ -5,6 +5,11 @@ var contactController = require('../controllers/contactController');
 var qlrController = require('../controllers/qlrController');
 var reportController = require('../controllers/reportController');
 var stepController = require('../controllers/stepController');
+//var opportunityController = require('../controllers/opportunityController');
+var ateamController = require('../controllers/ateamController');
+var opportunityController = require('../controllers/opportunityController');
+
+
 // Routes
 // GET | home page.
 router.get('/', function(req, res, next) {
@@ -13,9 +18,6 @@ router.get('/', function(req, res, next) {
 // GET | Static Routes
 router.get('/about', function(req, res, next) {
 	res.render('about', { title: 'Xlera Solutions - About Us' });
-});
-router.get('/a-team', function(req, res, next) {
-	res.render('a-team', { title: 'Xlera Solutions - Join The A-Team' });
 });
 router.get('/book-a-call', function(req, res, next) {
 	res.render('book-a-call', { title: 'Xlera Solutions - Book A Call' });
@@ -33,6 +35,12 @@ router.get('/step-2', function(req, res, next) {
 	res.render('step-2', { title: 'Xlera Solutions - Step 2' });
 });
 // Dynamic Routes
+
+router.get('/a-team', ateamController.index);
+router.get('/opportunity/:opportunityId', opportunityController.index);
+// router.get('/a-team', function(req, res, next) {
+// 	res.render('a-team', { title: 'Xlera Solutions - Join The A-Team' });
+// });
 router.get('/step-1/:opportunityId', function(req, res, next) {
 	var locals = {
 		title: 'Xlera Solutions - Step 1',
@@ -41,15 +49,6 @@ router.get('/step-1/:opportunityId', function(req, res, next) {
 		}
 	};
 	res.render('step-1', locals);
-});
-router.get('/opportunity/:opportunityId', function(req, res, next) {
-	var locals = {
-		title: 'Xlera Solutions - Opportunity',
-		opportunity: {
-			name: req.params.opportunityId
-		}
-	};
-	res.render('opportunity', locals);
 });
 router.get('/apply/:opportunityId', function(req, res, next) {
 	var locals = {

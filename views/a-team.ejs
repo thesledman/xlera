@@ -74,90 +74,25 @@
         </div>
       </div>
       <div class="row">
+        <% opportunities.forEach((item, index) => { %>
         <div class="col-12 col-lg-6">
           <div class="card mb-3" style="max-width: 540px;">
-            <a href="/opportunity/Client Experiece Professional">
+            <a href="/opportunity/<%= item.content.slug %>">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="images/opportunities/client-experiece-professional.jpg" class="img-fluid rounded-start" alt="Client Experiece Professional">
+                  <img src="<%= item.content.image %>" class="img-fluid rounded-start" alt="<%= item.content.name %>">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h6 class="card-title text-shadow-xs">Client Experiece Professional</h6>
-                    <p class="card-text fs-7 mb-0">Work to identify, understand and create a profile
-                      of
-                      their
-                      target customer.</p>
-                    </p>
+                    <h6 class="card-title text-shadow-xs"><%= item.content.name %></h6>
+                    <p class="card-text fs-7 mb-0"><%= item.content.brief %></p>
                   </div>
                 </div>
               </div>
             </a>
           </div>
         </div>
-        <div class="col-12 col-lg-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <a href="/opportunity/ELITE SQUAD: FPGA Design &amp; Verification">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="/images/opportunities/FPGA-development.jpg" class="img-fluid rounded-start" alt="ELITE SQUAD: FPGA Design & Verification">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h6 class="card-title text-shadow-xs">ELITE SQUAD: FPGA Design &amp; Verification</h6>
-                    <p class="card-text fs-7 mb-0">Provide developers with a methodology to
-                      successfully
-                      find
-                      and fix bugs earlier in the design cycle.</p>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <a href="/opportunity/Business Development">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="/images/opportunities/business-development.jpg" class="img-fluid rounded-start" alt="Business Development">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h6 class="card-title text-shadow-xs">
-                      Business
-                      Development</h6>
-                    <p class="card-text fs-7 mb-0">Pursue strategic opportunities by cultivating
-                      partnerships or
-                      other commercial relationships.</p>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6">
-          <div class="card mb-3" style="max-width: 540px;">
-            <a href="/qlr">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="/images/opportunities/qualified-leads.jpg" class="img-fluid rounded-start" alt="ELITE SQUAD: FPGA Design & Verification">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h6 class="card-title text-shadow-xs">
-                      Qualified Leads Program</h6>
-                    <p class="card-text fs-7 mb-0">Evaluate whether prospects are able, ready, and
-                      willing to buy your products and services.</p>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
+        <% }); %>
       </div>
       <div class="row">
         <div class="col-12">

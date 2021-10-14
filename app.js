@@ -3,17 +3,25 @@ var createError = require('http-errors');
 var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
 var path = require('path');
+var cookieSession = require('cookie-session');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var app = express();
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.use(expressLayouts);
 // Main website layout template
 app.set('layout', './layouts/public')
 app.set('view engine', 'ejs');
+// add req.session cookie support
+app.use(cookieSession({ 
+	name: 'session',
+	secret: 'do you xlera',
+	lookup: {},
+	opportunity: {},
+	maxAge: 24 * 60 * 60 * 1000 // 24 hours
+ }));
 
 // Static Imports
 app.use('/css/bootstrap.min.css', express.static(path.join('node_modules/bootstrap/dist/css/bootstrap.min.css')));
