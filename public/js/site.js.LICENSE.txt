@@ -5,6 +5,13 @@
   */
 
 /*!
+ * CookieConsent v2.6.0
+ * https://www.github.com/orestbida/cookieconsent
+ * Author Orest Bida
+ * Released under the MIT License
+ */
+
+/*!
  * Vue.js v2.6.14
  * (c) 2014-2021 Evan You
  * Released under the MIT License.

@@ -30,6 +30,7 @@
     "pug": "^3.0.2",
     "smooth-scroll": "^16.1.3",
     "vanilla-back-to-top": "^7.2.1",
+    "vanilla-cookieconsent": "^2.6.0",
     "vanillajs-scrollspy": "^2.2.0",
     "vue": "^2.6.14",
     "vue-the-mask": "^0.11.1",

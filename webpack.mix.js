@@ -20,11 +20,12 @@ var paths = {
 
 mix.js([
 	paths.resource + 'js/site.js',
-	paths.resource + 'js/forms.js'
+	paths.resource + 'js/forms.js',
+	paths.node + 'vanilla-cookieconsent/src/cookieconsent.js'
 ], paths.public + 'js/site.js').vue();
 
 mix.sass(paths.resource + 'scss/app.scss', paths.public + 'css/site.css')
 	.purgeCss({
-		content: [path.join(__dirname, 'views/*.ejs'),path.join(__dirname, 'views/layouts/*.ejs'),path.join(__dirname, 'src/js/components/*.vue')],
+		content: [path.join(__dirname, 'views/*.ejs'),path.join(__dirname, 'views/layouts/*.ejs'),path.join(__dirname, 'src/js/components/*.vue'),path.join(__dirname, 'node_modules/vanilla-cookieconsent/src/cookieconsent.js')],
 		safelist: { deep: [/hljs/] },
 	});

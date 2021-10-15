@@ -389,3 +389,13 @@ a {
 .fade-leave-to {
   opacity: 0;
 }
+
+// Cookie Consent
+// Remove border radius
+#cm {
+  border-radius: 0;
+}
+// Hide reject button
+#c-bns #c-s-bn {
+  display: none;
+}

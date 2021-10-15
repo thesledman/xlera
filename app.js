@@ -32,6 +32,7 @@ app.use('/css/bootstrap.min.css', express.static(path.join('node_modules/bootstr
 app.use('/js/bootstrap.bundle.min.js', express.static(path.join('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')));
 app.use('/js/vanilla-back-to-top.min.js', express.static(path.join('node_modules/vanilla-back-to-top/dist/vanilla-back-to-top.min.js')));
 app.use('/js/vanillajs-scrollspy.min.js', express.static(path.join('node_modules/vanillajs-scrollspy/dist/vanillajs-scrollspy.min.js')));
+app.use('/js/cookieconsent.js', express.static(path.join('node_modules/vanilla-cookieconsent/dist/cookieconsent.js')));
 
 app.use(logger('dev'));
 app.use(express.json());
