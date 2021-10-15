@@ -1,46 +1,56 @@
-var path = require('path');
 const fs = require('fs');
 const _ = require("lodash");
-var listinsDirectory = path.join(__dirname, '../opportunities');
-
+var listingsDirectory = null;
+// Stores active listings to be printed to the page
+var currentListings = [];
+// Stores a lookup table in session (local storage) to make loading opp
+// specific data faster on opportunity page.
+var lookupTable = [];
+	
 const index = function(req, res) {
-	var opps = get_listings();
+	listingsDirectory = req.app.get('listingsDirectory');
+	currentListings = [];
+	lookupTable = [];
+	get_listings();
 	var locals = {
-		title: 'Xlera Solutions - Step 1',
-		opportunities: opps.listings
+		title: 'Xlera Solutions - Join the A-Team',
+		opportunities: currentListings
 	};
-	req.session.lookup = opps.lookup;
+	req.session.lookup = lookupTable;
 	console.log(req.session.lookup);
 	res.render('a-team', locals);
 };
 
 const get_listings = () => {
-	var files = fs.readdirSync(listinsDirectory, { withFileTypes: true })
+	var files = fs.readdirSync(listingsDirectory, { withFileTypes: true })
 		.filter(dirent => dirent.isFile())
 		.map(dirent => dirent.name);
-	var listings = [];
-	var lookup = [];
 	for(var i = 0;i<files.length;i++){
-		// used to print opps to page
-		var theListing = read_listings(files[i]);
-		listings.push(theListing);
-		//used as lookup table when selecting an opp
-		var entry = {
-			"filename": theListing.filename,
-			"name" : theListing.content.name,
-			"slug": theListing.content.slug
-		}
-		lookup.push(entry);
+		var fileContent = read_listings(files[i]);
+		// Add filename to data
+		fileContent.filename = files[i];
+		// Add slug to file data.
+		fileContent.slug = slugify(fileContent.name);
+		currentListings.push(fileContent);
+		build_lookup_table(fileContent);
 	}
-	var oppData = {"listings": listings,"lookup": lookup};
-	return oppData;
+	return true;
 }
 
+const build_lookup_table = (fileContent) => {
+	var entry = {
+		"filename": fileContent.filename,
+		"name" : fileContent.name,
+		"slug": fileContent.slug
+	}
+	lookupTable.push(entry);
+	return;
+}
+
+
 const read_listings = (filename) => {
-	var content = JSON.parse(fs.readFileSync(listinsDirectory + '/' + filename, 'utf8'));
-	// console.log({'Filename': filename,'Content': content});
-	content.slug = slugify(content.name);
-	return {'filename': filename,'content': content};
+	var content = JSON.parse(fs.readFileSync(listingsDirectory + '/' + filename, 'utf8'));
+	return content;
 }
 
 const slugify = (text) => {

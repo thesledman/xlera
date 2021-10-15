@@ -1,5 +1,14 @@
 var api_post = require('../helpers/api_post');
 
+const index = function(req, res, next) {
+	var selectedOpportunity = req.session.opportunity;
+	var locals = {
+		title: 'Xlera Solutions - Step 1',
+		opportunity: selectedOpportunity
+	};
+	res.render('step-1', locals);
+};
+
 const form_post = (req,res) => {
 	var form_data = format_data(req.body);
 	//console.log(form_data);
@@ -69,5 +78,6 @@ const format_data = (data) => {
 }
 
 module.exports = {
+	index,
 	form_post
 }

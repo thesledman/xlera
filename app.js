@@ -10,6 +10,9 @@ var indexRouter = require('./routes/index');
 var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+// Set listing file location
+app.set('listingsDirectory', path.join(__dirname, 'opportunities'));
+// Use expressLayouts for templating
 app.use(expressLayouts);
 // Main website layout template
 app.set('layout', './layouts/public')

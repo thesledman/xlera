@@ -53,7 +53,7 @@
   <section class="py-5" id="qlrForm">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-6 offset-lg-3">
           <p class="fs-1 text-center fw-bolder text-shadow-xs">Get started now!</p>
           <form class="needs-validation" action="/qlr" method="post" novalidate id="qlrForm" v-on:submit.prevent="submit()" ref="form">
             <input type="hidden" name="page" id="page" value="QLR Program Page">
@@ -102,9 +102,6 @@
               <button class="btn btn-primary" type="submit" onClick>Submit form</button>
             </div>
           </form>
-        </div>
-        <div class="col-lg-6 d-flex justify-content-center align-items-center">
-          <image class="img-fluid d-none d-lg-block" src="images/qlr-form.jpg"></image>
         </div>
       </div>
     </div>

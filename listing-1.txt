@@ -1,0 +1,18 @@
+{
+	// Opportunity Name
+	"name": "Client Experiece Professional",
+	// Opportunity Image including starting /
+	"image":"/images/opportunities/client-experiece-professional.jpg",
+	// Short description for listing page
+	"brief": "Work to identify, understand and create a profile of their target customer.",
+	// Detailed description for Opportunity page left Box
+	"detailed": "In the production site this would be a breif explanation of the job opportunity. The details of the opportunity will be imported from the jobs file located in the opportunities folder in the website root.",
+	// Bullet points for Opportunity left box
+	"leftbullets": "You will do this|You will do that|You will do the other thing",
+	// Bullet points for Opportunity right box
+	"rightbullets": "You have high standards for your work.|You are energetic|You will do your best",
+	// show Elite banner on Opportunity page
+	"elite": false,
+	//  Dislpay the Opportunity on the website
+	"display": true
+}

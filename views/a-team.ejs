@@ -77,19 +77,23 @@
         <% opportunities.forEach((item, index) => { %>
         <div class="col-12 col-lg-6">
           <div class="card mb-3" style="max-width: 540px;">
-            <a href="/opportunity/<%= item.content.slug %>">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="<%= item.content.image %>" class="img-fluid rounded-start" alt="<%= item.content.name %>">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h6 class="card-title text-shadow-xs"><%= item.content.name %></h6>
-                    <p class="card-text fs-7 mb-0"><%= item.content.brief %></p>
+            <% if(!("page" in item)) { %>
+            <a href="/opportunity/<%= item.slug %>">
+              <% } else { %>
+              <a href="/qlr">
+                <% } %>
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="<%= item.image %>" class="img-fluid rounded-start" alt="<%= item.name %>">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h6 class="card-title text-shadow-xs"><%= item.name %></h6>
+                      <p class="card-text fs-7 mb-0"><%= item.brief %></p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
+              </a>
           </div>
         </div>
         <% }); %>

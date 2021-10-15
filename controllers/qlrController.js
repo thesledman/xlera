@@ -1,4 +1,14 @@
 var api_post = require('../helpers/api_post');
+const fs = require('fs'); 
+const _ = require("lodash");
+var listingsDirectory = null;
+
+const index = function(req, res, next) {
+	var locals = {
+		"title": "Xlera Solutions - Qualified Leads Registration (QLR)"
+	};
+	res.render('qlr', locals);
+};
 
 const form_post = (req,res) => {
 	var form_data = format_data(req.body);
@@ -43,5 +53,6 @@ const format_data = (data) => {
 }
 
 module.exports = {
+	index,
 	form_post
 }

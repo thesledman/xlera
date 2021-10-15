@@ -11,8 +11,13 @@
         <div class="col-12 col-lg-10 offset-lg-1">
           <p class="">Our journey together continues right now... For those who are truly ready to answer the call to adventure! Please read carefully. We’ll be awaiting your response!
           </p>
-          <h4 class="mt-5">STEP 2: Getting to know you and your unique experience!</h4>
+          <h4 class="mt-5 text-shadow-xs">STEP 2: Getting to know you and your unique experience!</h4>
+          <% if(!("screenshare" in opportunity)) { %>
+          <p>Record a video of yourself on: &ldquo;WHY I’M AWESOME&rdquo;</p>
+          <% } else { %>
           <p class="">Record a screen share showing some of your work. Talk us through some of your best code and what drove your design decisions. You may also demo running code or simulations. Having your camera on during your recording is recommended.</p>
+          <% } %>
+
         </div>
       </div>
       <div class="row">
@@ -32,8 +37,14 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-10 offset-lg-1">
-          <h4>IMPORTANT: See submission instructions below.</h4>
-          <p>Now, don’t let this intimidate you! Communication skills are very important to success in this role as you will be interacting with other A-Team members. Simply use screen recording software and show us what a KICKASS A-Team member you would be!</p>
+          <h4 class="text-shadow-xs">IMPORTANT: See submission instructions below.</h4>
+          <p>Now, don’t let this intimidate you! Communication skills are very important to success in this role as you will be interacting with other A-Team members. <span class="text-secondary fw-bold text-shadow-sm fs-6">Simply
+              <% if(!("screenshare" in opportunity)) { %>
+              grab your cell phone
+              <% } else { %>
+              use screen recording software
+              <% } %>
+              and show us what a KICKASS A-Team member you would be!</span></p>
         </div>
       </div>
     </div>
@@ -57,10 +68,10 @@
     <div class="container">
       <div class="row">
         <div class="col-12 col-lg-10 offset-lg-1">
-          <h4>SUBMISSION INSTRUCTIONS</h4>
+          <h4 class="text-shadow-xs">SUBMISSION INSTRUCTIONS</h4>
           <p>1. Upload your video to an online video sharing or file sharing platform.</p>
-          <p>2. Send a LINK* to the video to: ATeam@XleraSolutions.com with the subject line “Why I’m awesome - <%= opportunity.name %>“</p>
-          <p class="fst-italic text-secondary">*Please note that we receive large volumes of submissions and appreciate receiving your submission as a link rather than an attachment!</p>
+          <p>2. Send a LINK* to the video to: ATeam@XleraSolutions.com with the subject line:<br><span class="text-secondary text-shadow-sm fw-bold fs-6">&ldquo;Why I’m awesome - <%= opportunity.name %>&rdquo;</span></p>
+          <p class="fst-italic">*Please note that we receive large volumes of submissions and appreciate receiving your submission as a link rather than an attachment!</p>
           <h4 class="text-center mt-5">We look forward to learning more about YOU!</h4>
         </div>
       </div>
