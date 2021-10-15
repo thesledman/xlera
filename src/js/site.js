@@ -18,6 +18,9 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 if (document.getElementById("downloadModal")) {
 	var downloadModal = new bootstrap.Modal(document.getElementById('downloadModal'));
 }
+var popUpModal = new bootstrap.Modal(document.getElementById('bookACallModal'), {
+	keyboard: false
+  });
 // Form components validation/masking
 import Vuelidate from 'vuelidate';
 Vue.use(Vuelidate);
@@ -25,7 +28,24 @@ Vue.use(Vuelidate);
 import VueTheMask from 'vue-the-mask';
 Vue.use(VueTheMask);
 
+var hasClosed = false;
+document.addEventListener("mouseleave", function(event){
+	if(!hasClosed){
+		if(event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight))
+		{
+			popUpModal.show();
+			hasClosed = true;
+		}
+	}
+});
+
 window.addEventListener('load', function(){
+	setTimeout(() => {
+		if(!hasClosed){
+			popUpModal.show();
+			hasClosed = true;
+		}
+	}, 15000);
 	var cookieconsent = initCookieConsent();
 	cookieconsent.run({
 		current_lang : 'en',

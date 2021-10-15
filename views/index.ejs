@@ -113,7 +113,7 @@
     <div class="callout">
       <h1 class="text-primary text-center fw-bolder mb-5">Book a call to discuss what's important to you<br>and your unique FPGA needs</h1>
       <div class="text-center">
-        <a href="#" class="btn btn-accent me-3"> Book a call</a> <a href="#FPGAtalent" class="btn btn-outline-primary mt-3 mt-md-0"> Learn why FPGA talent is hard to find (and keep)</a>
+        <a href="/book-a-call" class="btn btn-accent me-3"> Book a call</a> <a href="#FPGAtalent" class="btn btn-outline-primary mt-3 mt-md-0"> Learn why FPGA talent is hard to find (and keep)</a>
       </div>
     </div>
   </section>
@@ -189,6 +189,27 @@
           <p class="fs-4 fw-bold">Get access to the report instantly!</p>
           <div id="downloadForm">
             <download-form @complete="closeModal"></download-form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="bookACallModal" tabindex="-1" aria-labelledby="bookACallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-secondary-light">
+        <div class="modal-body p-0">
+          <div class="container-fluid px-0">
+            <div class="row">
+              <div class="col-6 ps-0"><img src="/images/popupImage.jpg" class="img-fluid" alt="..."></div>
+              <div class="col-6">
+                <button type="button" class="btn-close float-end mt-2 me-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                <p class="text-secondary fs-5 fw-bolder pt-5 mb-4">Uncertain about how to achieve your next breakthrough FPGA Victory?</p>
+                <p class="text-secondary fs-5 fw-bolder mb-4">Would scaling top FPGA talent both up and down as needed allow you to go after more business?</p>
+                <p class="fs-6 fw-bolder mb-5">Book a 30 minute strategy call and get clarity with on-demand access to top FPGA talent, at the resource levels you demand.</p>
+                <a href="/book-a-call" class="btn btn-accent"> Book a call</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
