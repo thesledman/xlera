@@ -18,86 +18,86 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
 if (document.getElementById("downloadModal")) {
 	var downloadModal = new bootstrap.Modal(document.getElementById('downloadModal'));
 }
-var popUpModal = new bootstrap.Modal(document.getElementById('bookACallModal'), {
-	keyboard: false
-  });
 // Form components validation/masking
 import Vuelidate from 'vuelidate';
 Vue.use(Vuelidate);
 
 import VueTheMask from 'vue-the-mask';
 Vue.use(VueTheMask);
-
 var hasClosed = false;
-document.addEventListener("mouseleave", function(event){
-	if(!hasClosed){
-		if(event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight))
-		{
-			popUpModal.show();
-			hasClosed = true;
-		}
-	}
-});
-
-window.addEventListener('load', function(){
-	setTimeout(() => {
+if (document.getElementById("bookACallModal")) {
+	var popUpModal = new bootstrap.Modal(document.getElementById('bookACallModal'));
+	document.addEventListener("mouseleave", function(event){	
 		if(!hasClosed){
-			popUpModal.show();
-			hasClosed = true;
-		}
-	}, 15000);
-	var cookieconsent = initCookieConsent();
-	cookieconsent.run({
-		current_lang : 'en',
-		hide_from_bots: true,
-		cookie_expiration: 0,
-		onAccept : function(){
-			// do something ...
-		},
-		languages : {
-			en : {
-				consent_modal : {
-					title :  "This site uses cookies.",
-					description :  'To learn more, see our <a href="/privacy">Privacy Policy</a>.',
-					primary_btn: {
-						text: 'Ok',
-						role: 'accept_all'  //'accept_selected' or 'accept_all'
-					},
-					secondary_btn: {
-						text : 'Reject',
-						role : 'accept_necessary'   //'settings' or 'accept_necessary'
-					}
-				},
-				settings_modal : {
-					title : 'Cookie settings',
-					save_settings_btn : "Save settings",
-					accept_all_btn : "Accept all",
-					reject_all_btn : "Reject all", // optional, [v.2.5.0 +]
-					close_btn_label: "Close",   
-					blocks : [
-						{
-							title : "Cookie usage",
-							description: 'Your cookie usage disclaimer'
-						},{
-							title : "Strictly necessary cookies",
-							description: 'Category description ... ',
-							toggle : {
-								value : 'necessary',
-								enabled : false,
-								readonly: true
-							}
-						},{
-							title : "Analytics cookies",
-							description: 'Category description ... ',
-							toggle : {
-								value : 'analytics',
-								enabled : false,
-								readonly: false
-							}
-						},
-					]
-				}
+			if(event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight))
+			{
+				popUpModal.show();
+				hasClosed = true;
 			}
 		}
 	});
-});
+
+	window.addEventListener('load', function(){
+		setTimeout(() => {
+			if(!hasClosed){
+				popUpModal.show();
+				hasClosed = true;
+			}
+		}, 15000);
+		var cookieconsent = initCookieConsent();
+		cookieconsent.run({
+			current_lang : 'en',
+			hide_from_bots: true,
+			cookie_expiration: 0,
+			theme_css : '/css/site.css',
+			onAccept : function(){
+				// do something ...
+			},
+			languages : {
+				en : {
+					consent_modal : {
+						title :  "This site uses cookies.",
+						description :  'To learn more, see our <a href="/privacy">Privacy Policy</a>.',
+						primary_btn: {
+							text: 'Ok',
+							role: 'accept_all'  //'accept_selected' or 'accept_all'
+						},
+						secondary_btn: {
+							text : 'Reject',
+							role : 'accept_necessary'   //'settings' or 'accept_necessary'
+						}
+					},
+					settings_modal : {
+						title : 'Cookie settings',
+						save_settings_btn : "Save settings",
+						accept_all_btn : "Accept all",
+						reject_all_btn : "Reject all", // optional, [v.2.5.0 +]
+						close_btn_label: "Close",   
+						blocks : [
+							{
+								title : "Cookie usage",
+								description: 'Your cookie usage disclaimer'
+							},{
+								title : "Strictly necessary cookies",
+								description: 'Category description ... ',
+								toggle : {
+									value : 'necessary',
+									enabled : false,
+									readonly: true
+								}
+							},{
+								title : "Analytics cookies",
+								description: 'Category description ... ',
+								toggle : {
+									value : 'analytics',
+									enabled : false,
+									readonly: false
+								}
+							},
+						]
+					}
+				}
+			}
+		});
+	});
+}

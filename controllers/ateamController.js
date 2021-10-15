@@ -17,7 +17,6 @@ const index = function(req, res) {
 		opportunities: currentListings
 	};
 	req.session.lookup = lookupTable;
-	console.log(req.session.lookup);
 	res.render('a-team', locals);
 };
 
