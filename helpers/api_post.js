@@ -9,15 +9,15 @@ const send_message = (form_data) => {
 		data: form_data
 	}
 	console.log('this was submitted');
-	// axios(config)
-	// .then(function (response) {
-	// 	console.log(response);
-	// 	return true;
-	// 	})
-	// 	.catch(function (error) {
-	// 	console.log(error.response.data,error);
-	// 	return true;
-	// 	});
+	axios(config)
+	.then(function (response) {
+		console.log(response);
+		return true;
+		})
+		.catch(function (error) {
+		console.log(error.response.data,error);
+		return true;
+		});
 }
 
 module.exports = {

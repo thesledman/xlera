@@ -32,12 +32,14 @@ router.get('/apply', function(req, res, next) {
 router.get('/step-2', function(req, res, next) {
 	res.render('step-2', { title: 'Xlera Solutions - Step 2', opportunity: req.session.opportunity});
 });
-
+// router.get('/opportunity', function(req, res, next) {
+// 	res.redirect('/a-team');
+// });
 // Dynamic Routes
 
 router.get('/a-team', ateamController.index);
 router.get('/qlr',qlrController.index);
-router.get('/opportunity/:opportunityId', opportunityController.index);
+router.get('/opportunity/:opportunityId?', opportunityController.index);
 router.get('/step-1',stepController.index);
 // router.get('/a-team', function(req, res, next) {
 // 	res.render('a-team', { title: 'Xlera Solutions - Join The A-Team' });

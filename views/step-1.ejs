@@ -178,8 +178,8 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="whereDidYouLearnAboutThisOpportunity" class="form-label fw-bold">Where did you learn about this opportunity</label>
-              <select class="form-select" aria-label="Default select example" v-model.trim="form.whereDidYouLearnAboutThisOpportunity">
+              <label for="whereDidYouLearnAboutThisOpportunity" class="form-label fw-bold" :class="{ 'is-invalid': $v.form.whereDidYouLearnAboutThisOpportunity.$error }">Where did you learn about this opportunity</label>
+              <select class="form-select" :class="{ 'is-invalid': $v.form.whereDidYouLearnAboutThisOpportunity.$error }" aria-label="Default select example" v-model.trim="form.whereDidYouLearnAboutThisOpportunity">
                 <option disabled selected value="">Select One</option>
                 <option value="Friend / Colleague">Friend / Colleague</option>
                 <option value="Search">Search</option>

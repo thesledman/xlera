@@ -3,6 +3,9 @@ const _ = require("lodash");
 var listingsDirectory = null;
 
 const index = function(req, res, next) {
+	if(_.isEmpty(req.params.opportunityId)){
+		res.redirect('/a-team');
+	}
 	listingsDirectory = req.app.get('listingsDirectory');
 	var opportunity = lookup(req.session.lookup ,req.params.opportunityId);
 	req.session.opportunity = opportunity;

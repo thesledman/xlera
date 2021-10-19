@@ -138,6 +138,17 @@
       ),
       url("/images/engine-hero.jpg");
   }
+
+  .engines-hero .btn-primary {
+    color: #003146 !important;
+    background-color: #ffffff !important;
+    border-color: #ffffff !important;
+  }
+  .engines-hero .btn-primary:hover {
+    color: #002a3c !important;
+    background-color: #eeeeee !important;
+    border-color: #eeeeee !important;
+  }
   .text-primary-to-white {
     color: #ffffff !important;
   }

@@ -2,7 +2,8 @@ require('./bootstrap');
 // enable smooth scrolling for same page anchors (suuport for older browsers)
 import SmoothScroll from 'smooth-scroll';
 var scroll = new SmoothScroll('a[href*="#"]', {
-	speed: 300
+	speed: 300,
+	offset: 100
 });
 // Add back to top button
 import { addBackToTop } from 'vanilla-back-to-top'
@@ -43,12 +44,12 @@ if (document.getElementById("bookACallModal")) {
 				popUpModal.show();
 				hasClosed = true;
 			}
-		}, 15000);
+		}, 300);//15000
 		var cookieconsent = initCookieConsent();
 		cookieconsent.run({
 			current_lang : 'en',
 			hide_from_bots: true,
-			cookie_expiration: 0,
+			cookie_expiration: 182,
 			theme_css : '/css/site.css',
 			onAccept : function(){
 				// do something ...
