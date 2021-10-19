@@ -44,7 +44,7 @@ if (document.getElementById("bookACallModal")) {
 				popUpModal.show();
 				hasClosed = true;
 			}
-		}, 300);//15000
+		}, 15000);
 		var cookieconsent = initCookieConsent();
 		cookieconsent.run({
 			current_lang : 'en',
