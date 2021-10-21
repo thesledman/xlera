@@ -27,5 +27,5 @@ mix.js([
 mix.sass(paths.resource + 'scss/app.scss', paths.public + 'css/site.css')
 	.purgeCss({
 		content: [path.join(__dirname, 'views/*.ejs'),path.join(__dirname, 'views/layouts/*.ejs'),path.join(__dirname, 'src/js/components/*.vue'),path.join(__dirname, 'node_modules/vanilla-cookieconsent/src/cookieconsent.js')],
-		safelist: { deep: [/hljs/] },
+		safelist: {  standard: ['modal-backdrop'],deep: [/hljs/] },
 	});

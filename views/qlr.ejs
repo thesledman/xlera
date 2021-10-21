@@ -20,7 +20,7 @@
       <div class="row">
         <div class="col-12 col-md-4 offset-md-4">
           <div class="ratio ratio-16x9 my-5">
-            <video poster="/video/placeholder-video-poster.png" loop="false" disablepictureinpicture="true" playsinline="true" controls>
+            <video poster="/video/placeholder-video-poster.png" disablepictureinpicture="true" playsinline="true" controls>
               <source src="/video/placeholder-video.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -91,7 +91,7 @@
               <label for="phone" class="form-label">Phone</label>
               <input type="tel" class="form-control" id="phone" name="phone" v-model.trim="$v.form.phone.$model" v-mask="'(###) ###-####'" :class="{ 'is-invalid': $v.form.phone.$error }">
               <div class="invalid-feedback fst-italic">
-                Please provide a phone number for us to contact you Or uncheck the box below.
+                Please provide a phone number for us to contact you Or uncheck the box above.
               </div>
             </div>
             <div class="mb-3">

@@ -382,8 +382,11 @@ a {
 }
 
 // Modal Backdrop Opacity
-.modal-backdrop.show {
-  opacity: 0.8 !important;
+.modal-backdrop {
+  background-color: #ffffff !important;
+  &.show {
+    opacity: 0.8 !important;
+  }
 }
 // Vue Transitions
 
