@@ -3,7 +3,14 @@ require('./bootstrap');
 import SmoothScroll from 'smooth-scroll';
 var scroll = new SmoothScroll('a[href*="#"]', {
 	speed: 300,
-	offset: 100
+	offset: function (anchor, toggle) {
+		if (anchor.innerText.indexOf('FPGAtalent') !== -1) {
+			return 128;
+		} else {
+			return 100;
+		}
+
+	}
 });
 // Add back to top button
 import { addBackToTop } from 'vanilla-back-to-top'

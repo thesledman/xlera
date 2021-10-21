@@ -410,3 +410,13 @@ a {
 #c-bns #c-s-bn {
   display: none;
 }
+
+// offset for mobile anchor link
+#FPGAtalent::before {
+  content: "";
+  position: relative;
+  display: block;
+  height: 128px;
+  margin-top: -128px;
+  visibility: hidden;
+}
