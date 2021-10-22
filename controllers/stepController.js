@@ -1,6 +1,9 @@
 var api_post = require('../helpers/api_post');
 
 const index = function(req, res, next) {
+	if(typeof req.session.opportunity == 'undefined' || req.session.opportunity === ""){
+		res.redirect('/a-team');
+	}
 	var selectedOpportunity = req.session.opportunity;
 	var locals = {
 		title: 'Xlera Solutions - Step 1',

@@ -24,15 +24,20 @@ const get_listings = () => {
 	var files = fs.readdirSync(listingsDirectory, { withFileTypes: true })
 		.filter(dirent => dirent.isFile())
 		.map(dirent => dirent.name);
-	for(var i = 0;i<files.length;i++){
-		var fileContent = read_listings(files[i]);
-		// Add filename to data
-		fileContent.filename = files[i];
-		// Add slug to file data.
-		fileContent.slug = slugify(fileContent.name);
-		currentListings.push(fileContent);
-		build_lookup_table(fileContent);
-	}
+		console.log("files: " + files.length,files);
+		if(files.length >= 1){
+			for(var i = 0;i<files.length;i++){
+				var fileContent = read_listings(files[i]);
+				if(fileContent && fileContent.display){
+					// Add filename to data
+					fileContent.filename = files[i];
+					// Add slug to file data.
+					fileContent.slug = slugify(fileContent.name);
+					currentListings.push(fileContent);
+					build_lookup_table(fileContent);
+				}
+			}
+		}
 	return true;
 }
 
@@ -48,7 +53,11 @@ const build_lookup_table = (fileContent) => {
 
 
 const read_listings = (filename) => {
-	var content = JSON.parse(fs.readFileSync(listingsDirectory + '/' + filename, 'utf8'));
+	try{ 
+		var content = JSON.parse(fs.readFileSync(listingsDirectory + '/' + filename, 'utf8'));
+	  } catch(e) { 
+		return false;
+	  }
 	return content;
 }
 

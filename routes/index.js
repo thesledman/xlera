@@ -30,6 +30,10 @@ router.get('/apply', function(req, res, next) {
 	res.render('apply', { title: 'Xlera Solutions - Apply Now'});
 });
 router.get('/step-2', function(req, res, next) {
+	if(typeof req.session.opportunity == 'undefined' || req.session.opportunity === ""){
+		res.redirect('/a-team');
+	}
+	console.log(req.session.opportunity);
 	res.render('step-2', { title: 'Xlera Solutions - Step 2', opportunity: req.session.opportunity});
 });
 // Dynamic Routes

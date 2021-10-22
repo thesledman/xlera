@@ -74,6 +74,7 @@
         </div>
       </div>
       <div class="row">
+        <% if(opportunities.length >= 1){ %>
         <% opportunities.forEach((item, index) => { %>
         <div class="col-12 col-lg-6">
           <div class="card mb-3" style="max-width: 540px;">
@@ -97,6 +98,11 @@
           </div>
         </div>
         <% }); %>
+        <% } else { %>
+        <div class="col-12 text-center my-5">
+          <h2><span class="text-secondary">Sorry, </span> Currently No Opportunities Available.</h2>
+        </div>
+        <% } %>
       </div>
       <div class="row">
         <div class="col-12">
