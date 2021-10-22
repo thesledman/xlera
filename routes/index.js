@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-//var formController = require('../controllers/formController');
+// import controllers
 var contactController = require('../controllers/contactController');
 var qlrController = require('../controllers/qlrController');
 var reportController = require('../controllers/reportController');
@@ -32,20 +32,13 @@ router.get('/apply', function(req, res, next) {
 router.get('/step-2', function(req, res, next) {
 	res.render('step-2', { title: 'Xlera Solutions - Step 2', opportunity: req.session.opportunity});
 });
-// router.get('/opportunity', function(req, res, next) {
-// 	res.redirect('/a-team');
-// });
 // Dynamic Routes
-
 router.get('/a-team', ateamController.index);
 router.get('/qlr',qlrController.index);
+// Opportunity expects to recieve the job name as in s-l-u-g format
+// if no job is passed will redirect to the a-team page
 router.get('/opportunity/:opportunityId?', opportunityController.index);
 router.get('/step-1',stepController.index);
-// router.get('/a-team', function(req, res, next) {
-// 	res.render('a-team', { title: 'Xlera Solutions - Join The A-Team' });
-// });
-
-
 // Post Routes
 router.post('/contact-us', contactController.form_post);
 router.post('/qlr',qlrController.form_post);
